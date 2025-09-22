@@ -1,184 +1,6 @@
-/* Logo Styles */
-			.logo {
-				display: inline-block;
-				line-height: 0;
-			}
-
-			.logo svg {
-				width: 100%;
-				height: 100%;
-			}
-
-			/* Tailles du logo */
-			.logo-xs {
-				width: 16px;
-				height: 16px;
-			}
-
-			.logo-sm {
-				width: 24px;
-				height: 24px;
-			}
-
-			.logo-md {
-				width: 32px;
-				height: 32px;
-			}
-
-			.logo-lg {
-				width: 48px;
-				height: 48px;
-			}
-
-			.logo-xl {
-				width: 64px;
-				height: 64px;
-			}
-
-			/* Variantes de couleur */
-			.logo-default path {
-				fill: var(--color-primary);
-			}
-
-			.logo-negative path {
-				fill: #FFFFFF;
-			}
-
-			/* Styles pour la section Logo */
-			.logo-examples {
-				display: flex;
-				flex-direction: column;
-				gap: var(--spacing-2xl);
-			}
-
-			.logo-size-demo,
-			.logo-variant-demo,
-			.logo-usage {
-				background: white;
-				padding: var(--spacing-xl);
-				border-radius: var(--border-radius-lg);
-				box-shadow: var(--shadow-sm);
-			}
-
-			.logo-size-demo h3,
-			.logo-variant-demo h3,
-			.logo-usage h3 {
-				margin-bottom: var(--spacing-lg);
-				font-size: var(--font-size-lg);
-				color: var(--color-neutral-800);
-			}
-
-			.logo-sizes {
-				display: flex;
-				align-items: flex-end;
-				gap: var(--spacing-xl);
-				flex-wrap: wrap;
-			}
-
-			.logo-item {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: var(--spacing-sm);
-				text-align: center;
-			}
-
-			.logo-label {
-				font-size: var(--font-size-sm);
-				font-weight: 500;
-				color: var(--color-neutral-700);
-			}
-
-			.logo-item code {
-				font-family: var(--font-family-mono);
-				font-size: var(--font-size-xs);
-				color: var(--color-neutral-500);
-				background: var(--color-neutral-100);
-				padding: var(--spacing-xs);
-				border-radius: var(--border-radius-sm);
-			}
-
-			.logo-variants {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-				gap: var(--spacing-lg);
-			}
-
-			.logo-variant-item {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: var(--spacing-sm);
-				text-align: center;
-			}
-
-			.logo-background {
-				padding: var(--spacing-lg);
-				border-radius: var(--border-radius-md);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-
-			.logo-background.light {
-				background-color: var(--color-neutral-100);
-				border: 1px solid var(--color-neutral-200);
-			}
-
-			.logo-background.dark {
-				background-color: var(--color-primary);
-			}
-
-			.usage-examples {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				gap: var(--spacing-lg);
-			}
-
-			.usage-example {
-				border: 1px solid var(--color-neutral-200);
-				border-radius: var(--border-radius-md);
-				overflow: hidden;
-			}
-
-			.usage-example h4 {
-				margin: 0;
-				padding: var(--spacing-md);
-				background: var(--color-neutral-50);
-				font-size: var(--font-size-base);
-				border-bottom: 1px solid var(--color-neutral-200);
-			}
-
-			.nav-example {
-				display: flex;
-				align-items: center;
-				gap: var(--spacing-lg);
-				padding: var(--spacing-md);
-				background: white;
-			}
-
-			.nav-example span {
-				font-weight: 500;
-				color: var(--color-neutral-800);
-			}
-
-			.nav-example nav {
-				display: flex;
-				gap: var(--spacing-md);
-				margin-left: auto;
-			}
-
-			.nav-example nav a {
-				color: var(--color-neutral-600);
-				text-decoration: none;
-				font-size: var(--font-size-sm);
-				padding: var(--spacing-xs) var(--spacing-sm);
-				border-radius: var(--border-radius-sm);
-				transition: all 0.2s ease;
-			}
-
-			---
+---
 // src/pages/design-system.astro
+import Logo from '../components/Logo.astro';
 ---
 
 <html lang="fr">
@@ -204,47 +26,27 @@
 						<h3>Tailles disponibles</h3>
 						<div class="logo-sizes">
 							<div class="logo-item">
-								<div class="logo logo-xs logo-default">
-									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-										<path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-									</svg>
-								</div>
+								<Logo size="xs" />
 								<span class="logo-label">XS - 16px</span>
 								<code>size="xs"</code>
 							</div>
 							<div class="logo-item">
-								<div class="logo logo-sm logo-default">
-									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-										<path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-									</svg>
-								</div>
+								<Logo size="sm" />
 								<span class="logo-label">SM - 24px</span>
 								<code>size="sm"</code>
 							</div>
 							<div class="logo-item">
-								<div class="logo logo-md logo-default">
-									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-										<path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-									</svg>
-								</div>
+								<Logo size="md" />
 								<span class="logo-label">MD - 32px</span>
 								<code>size="md" (défaut)</code>
 							</div>
 							<div class="logo-item">
-								<div class="logo logo-lg logo-default">
-									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-										<path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-									</svg>
-								</div>
+								<Logo size="lg" />
 								<span class="logo-label">LG - 48px</span>
 								<code>size="lg"</code>
 							</div>
 							<div class="logo-item">
-								<div class="logo logo-xl logo-default">
-									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-										<path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-									</svg>
-								</div>
+								<Logo size="xl" />
 								<span class="logo-label">XL - 64px</span>
 								<code>size="xl"</code>
 							</div>
@@ -256,22 +58,14 @@
 						<div class="logo-variants">
 							<div class="logo-variant-item">
 								<div class="logo-background light">
-									<div class="logo logo-lg logo-default">
-										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-											<path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-										</svg>
-									</div>
+									<Logo size="lg" variant="default" />
 								</div>
 								<span class="logo-label">Version par défaut</span>
 								<code>variant="default"</code>
 							</div>
 							<div class="logo-variant-item">
 								<div class="logo-background dark">
-									<div class="logo logo-lg logo-negative">
-										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-											<path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-										</svg>
-									</div>
+									<Logo size="lg" variant="negative" />
 								</div>
 								<span class="logo-label">Version négative</span>
 								<code>variant="negative"</code>
@@ -285,12 +79,8 @@
 							<div class="usage-example">
 								<h4>Dans une navigation</h4>
 								<div class="nav-example">
-									<div class="logo logo-sm logo-default">
-										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-											<path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-										</svg>
-									</div>
-									<span>Navigation</span>
+									<Logo size="sm" />
+									<span>MonSite</span>
 									<nav>
 										<a href="#">Accueil</a>
 										<a href="#">Produits</a>
@@ -301,13 +91,43 @@
 							<div class="usage-example">
 								<h4>Sur fond sombre</h4>
 								<div class="dark-example">
-									<div class="logo logo-md logo-negative">
-										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-											<path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-										</svg>
-									</div>
+									<Logo size="md" variant="negative" />
 									<p>Version blanche pour les arrière-plans sombres</p>
 								</div>
+							</div>
+							<div class="usage-example">
+								<h4>Avec classes personnalisées</h4>
+								<div class="custom-example">
+									<Logo size="lg" class="custom-logo" />
+									<p>Logo avec classes CSS personnalisées</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="logo-code">
+						<h3>Comment utiliser</h3>
+						<div class="code-examples">
+							<div class="code-block">
+								<h4>Import du composant</h4>
+								<pre><code>---
+import Logo from '../components/Logo.astro';
+---</code></pre>
+							</div>
+							<div class="code-block">
+								<h4>Utilisation basique</h4>
+								<pre><code>&lt;Logo /&gt;
+&lt;Logo size="lg" /&gt;
+&lt;Logo variant="negative" /&gt;
+&lt;Logo size="xl" variant="negative" class="my-logo" /&gt;</code></pre>
+							</div>
+							<div class="code-block">
+								<h4>Props disponibles</h4>
+								<ul class="props-list">
+									<li><strong>size:</strong> 'xs' | 'sm' | 'md' | 'lg' | 'xl' (défaut: 'md')</li>
+									<li><strong>variant:</strong> 'default' | 'negative' (défaut: 'default')</li>
+									<li><strong>class:</strong> string - Classes CSS personnalisées</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -669,6 +489,220 @@
 				margin-bottom: var(--spacing-lg);
 				padding-bottom: var(--spacing-sm);
 				border-bottom: 2px solid var(--color-neutral-200);
+			}
+
+			/* Logo Styles */
+			.logo-examples {
+				display: flex;
+				flex-direction: column;
+				gap: var(--spacing-2xl);
+			}
+
+			.logo-size-demo,
+			.logo-variant-demo,
+			.logo-usage,
+			.logo-code {
+				background: white;
+				padding: var(--spacing-xl);
+				border-radius: var(--border-radius-lg);
+				box-shadow: var(--shadow-sm);
+			}
+
+			.logo-size-demo h3,
+			.logo-variant-demo h3,
+			.logo-usage h3,
+			.logo-code h3 {
+				margin-bottom: var(--spacing-lg);
+				font-size: var(--font-size-lg);
+				color: var(--color-neutral-800);
+			}
+
+			.logo-sizes {
+				display: flex;
+				align-items: flex-end;
+				gap: var(--spacing-xl);
+				flex-wrap: wrap;
+			}
+
+			.logo-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: var(--spacing-sm);
+				text-align: center;
+			}
+
+			.logo-label {
+				font-size: var(--font-size-sm);
+				font-weight: 500;
+				color: var(--color-neutral-700);
+			}
+
+			.logo-item code,
+			.code-block code {
+				font-family: var(--font-family-mono);
+				font-size: var(--font-size-xs);
+				color: var(--color-neutral-600);
+				background: var(--color-neutral-100);
+				padding: var(--spacing-xs);
+				border-radius: var(--border-radius-sm);
+			}
+
+			.logo-variants {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: var(--spacing-lg);
+			}
+
+			.logo-variant-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: var(--spacing-sm);
+				text-align: center;
+			}
+
+			.logo-background {
+				padding: var(--spacing-lg);
+				border-radius: var(--border-radius-md);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100px;
+			}
+
+			.logo-background.light {
+				background-color: var(--color-neutral-100);
+				border: 1px solid var(--color-neutral-200);
+			}
+
+			.logo-background.dark {
+				background-color: var(--color-primary);
+			}
+
+			.usage-examples {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: var(--spacing-lg);
+			}
+
+			.usage-example {
+				border: 1px solid var(--color-neutral-200);
+				border-radius: var(--border-radius-md);
+				overflow: hidden;
+			}
+
+			.usage-example h4 {
+				margin: 0;
+				padding: var(--spacing-md);
+				background: var(--color-neutral-50);
+				font-size: var(--font-size-base);
+				border-bottom: 1px solid var(--color-neutral-200);
+			}
+
+			.nav-example {
+				display: flex;
+				align-items: center;
+				gap: var(--spacing-lg);
+				padding: var(--spacing-md);
+				background: white;
+			}
+
+			.nav-example span {
+				font-weight: 500;
+				color: var(--color-neutral-800);
+			}
+
+			.nav-example nav {
+				display: flex;
+				gap: var(--spacing-md);
+				margin-left: auto;
+			}
+
+			.nav-example nav a {
+				color: var(--color-neutral-600);
+				text-decoration: none;
+				font-size: var(--font-size-sm);
+				padding: var(--spacing-xs) var(--spacing-sm);
+				border-radius: var(--border-radius-sm);
+				transition: all 0.2s ease;
+			}
+
+			.nav-example nav a:hover {
+				background-color: var(--color-neutral-100);
+				color: var(--color-neutral-800);
+			}
+
+			.dark-example {
+				padding: var(--spacing-lg);
+				background: var(--color-primary);
+				color: white;
+				display: flex;
+				align-items: center;
+				gap: var(--spacing-md);
+			}
+
+			.custom-example {
+				padding: var(--spacing-lg);
+				background: var(--color-neutral-50);
+				display: flex;
+				align-items: center;
+				gap: var(--spacing-md);
+			}
+
+			.code-examples {
+				display: grid;
+				gap: var(--spacing-lg);
+			}
+
+			.code-block {
+				background: var(--color-neutral-50);
+				padding: var(--spacing-md);
+				border-radius: var(--border-radius-md);
+				border: 1px solid var(--color-neutral-200);
+			}
+
+			.code-block h4 {
+				margin-bottom: var(--spacing-sm);
+				font-size: var(--font-size-base);
+				color: var(--color-neutral-800);
+			}
+
+			.code-block pre {
+				background: var(--color-neutral-800);
+				color: var(--color-neutral-100);
+				padding: var(--spacing-md);
+				border-radius: var(--border-radius-sm);
+				overflow-x: auto;
+				font-family: var(--font-family-mono);
+				font-size: var(--font-size-sm);
+				line-height: 1.5;
+			}
+
+			.props-list {
+				list-style: none;
+				padding: 0;
+			}
+
+			.props-list li {
+				padding: var(--spacing-xs) 0;
+				font-family: var(--font-family-mono);
+				font-size: var(--font-size-sm);
+				color: var(--color-neutral-700);
+			}
+
+			.props-list strong {
+				color: var(--color-tertiary);
+			}
+
+			/* Style personnalisé pour demo */
+			:global(.custom-logo) {
+				filter: hue-rotate(180deg);
+				transition: transform 0.3s ease;
+			}
+
+			:global(.custom-logo:hover) {
+				transform: scale(1.1);
 			}
 
 			/* Colors */
