@@ -27,48 +27,28 @@ import Logo from '../components/Logo.astro';
 						<div class="logo-sizes">
 							<div class="logo-item">
 								<Logo size="xs" />
-								<span class="logo-label">XS - 16px</span>
+								<span class="logo-label">XS - 128px</span>
 								<code>size="xs"</code>
 							</div>
 							<div class="logo-item">
 								<Logo size="sm" />
-								<span class="logo-label">SM - 24px</span>
+								<span class="logo-label">SM - 160px</span>
 								<code>size="sm"</code>
 							</div>
 							<div class="logo-item">
 								<Logo size="md" />
-								<span class="logo-label">MD - 32px</span>
+								<span class="logo-label">MD - 192px</span>
 								<code>size="md" (défaut)</code>
 							</div>
 							<div class="logo-item">
 								<Logo size="lg" />
-								<span class="logo-label">LG - 48px</span>
+								<span class="logo-label">LG - 224px</span>
 								<code>size="lg"</code>
 							</div>
 							<div class="logo-item">
 								<Logo size="xl" />
-								<span class="logo-label">XL - 64px</span>
+								<span class="logo-label">XL - 256px</span>
 								<code>size="xl"</code>
-							</div>
-						</div>
-					</div>
-
-					<div class="logo-variant-demo">
-						<h3>Variantes</h3>
-						<div class="logo-variants">
-							<div class="logo-variant-item">
-								<div class="logo-background light">
-									<Logo size="lg" variant="default" />
-								</div>
-								<span class="logo-label">Version par défaut</span>
-								<code>variant="default"</code>
-							</div>
-							<div class="logo-variant-item">
-								<div class="logo-background dark">
-									<Logo size="lg" variant="negative" />
-								</div>
-								<span class="logo-label">Version négative</span>
-								<code>variant="negative"</code>
 							</div>
 						</div>
 					</div>
@@ -79,7 +59,7 @@ import Logo from '../components/Logo.astro';
 							<div class="usage-example">
 								<h4>Dans une navigation</h4>
 								<div class="nav-example">
-									<Logo size="sm" />
+									<Logo size="xs" />
 									<span>MonSite</span>
 									<nav>
 										<a href="#">Accueil</a>
@@ -89,18 +69,36 @@ import Logo from '../components/Logo.astro';
 								</div>
 							</div>
 							<div class="usage-example">
-								<h4>Sur fond sombre</h4>
-								<div class="dark-example">
-									<Logo size="md" variant="negative" />
-									<p>Version blanche pour les arrière-plans sombres</p>
+								<h4>En page d'accueil</h4>
+								<div class="hero-example">
+									<Logo size="lg" />
+									<p>Logo principal en grande taille</p>
 								</div>
 							</div>
 							<div class="usage-example">
 								<h4>Avec classes personnalisées</h4>
 								<div class="custom-example">
-									<Logo size="lg" class="custom-logo" />
-									<p>Logo avec classes CSS personnalisées</p>
+									<Logo size="md" class="custom-logo" />
+									<p>Logo avec animations personnalisées</p>
 								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="logo-accessibility">
+						<h3>Caractéristiques</h3>
+						<div class="accessibility-info">
+							<div class="accessibility-item">
+								<h4>Couleurs d'origine préservées</h4>
+								<p>Le logo conserve ses couleurs originales sans modification automatique</p>
+							</div>
+							<div class="accessibility-item">
+								<h4>Alternative textuelle</h4>
+								<p>L'attribut <code>alt</code> est défini pour l'accessibilité des lecteurs d'écran</p>
+							</div>
+							<div class="accessibility-item">
+								<h4>Format SVG vectoriel</h4>
+								<p>Qualité parfaite à toutes les tailles, du plus petit au plus grand</p>
 							</div>
 						</div>
 					</div>
@@ -118,16 +116,18 @@ import Logo from '../components/Logo.astro';
 								<h4>Utilisation basique</h4>
 								<pre><code>&lt;Logo /&gt;
 &lt;Logo size="lg" /&gt;
-&lt;Logo variant="negative" /&gt;
-&lt;Logo size="xl" variant="negative" class="my-logo" /&gt;</code></pre>
+&lt;Logo size="xl" class="my-logo" /&gt;</code></pre>
 							</div>
 							<div class="code-block">
 								<h4>Props disponibles</h4>
 								<ul class="props-list">
 									<li><strong>size:</strong> 'xs' | 'sm' | 'md' | 'lg' | 'xl' (défaut: 'md')</li>
-									<li><strong>variant:</strong> 'default' | 'negative' (défaut: 'default')</li>
 									<li><strong>class:</strong> string - Classes CSS personnalisées</li>
 								</ul>
+							</div>
+							<div class="code-block">
+								<h4>Fichier source</h4>
+								<p class="file-info">Le logo est chargé depuis <code>/public/img/logo.svg</code></p>
 							</div>
 						</div>
 					</div>
@@ -499,8 +499,8 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.logo-size-demo,
-			.logo-variant-demo,
 			.logo-usage,
+			.logo-accessibility,
 			.logo-code {
 				background: white;
 				padding: var(--spacing-xl);
@@ -509,8 +509,8 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.logo-size-demo h3,
-			.logo-variant-demo h3,
 			.logo-usage h3,
+			.logo-accessibility h3,
 			.logo-code h3 {
 				margin-bottom: var(--spacing-lg);
 				font-size: var(--font-size-lg);
@@ -518,10 +518,10 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.logo-sizes {
-				display: flex;
-				align-items: flex-end;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
 				gap: var(--spacing-xl);
-				flex-wrap: wrap;
+				align-items: center;
 			}
 
 			.logo-item {
@@ -580,6 +580,73 @@ import Logo from '../components/Logo.astro';
 				background-color: var(--color-primary);
 			}
 
+			/* Responsive demo */
+			.responsive-examples {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: var(--spacing-lg);
+			}
+
+			.responsive-example {
+				border: 1px solid var(--color-neutral-200);
+				border-radius: var(--border-radius-md);
+				overflow: hidden;
+			}
+
+			.responsive-example h4 {
+				margin: 0;
+				padding: var(--spacing-md);
+				background: var(--color-neutral-50);
+				font-size: var(--font-size-base);
+				border-bottom: 1px solid var(--color-neutral-200);
+			}
+
+			.desktop-preview,
+			.mobile-preview {
+				padding: var(--spacing-lg);
+				display: flex;
+				align-items: center;
+				gap: var(--spacing-md);
+				background: white;
+			}
+
+			.mobile-preview {
+				background: var(--color-neutral-25);
+				padding: var(--spacing-md);
+			}
+
+			/* Accessibility */
+			.accessibility-info {
+				display: grid;
+				gap: var(--spacing-lg);
+			}
+
+			.accessibility-item {
+				padding: var(--spacing-md);
+				border-left: 4px solid var(--color-tertiary);
+				background: var(--color-neutral-50);
+				border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+			}
+
+			.accessibility-item h4 {
+				margin-bottom: var(--spacing-xs);
+				font-size: var(--font-size-base);
+				color: var(--color-tertiary);
+			}
+
+			.accessibility-item p {
+				margin: 0;
+				font-size: var(--font-size-sm);
+				color: var(--color-neutral-600);
+			}
+
+			.accessibility-item code {
+				font-family: var(--font-family-mono);
+				background: var(--color-neutral-200);
+				padding: 2px 4px;
+				border-radius: var(--border-radius-sm);
+			}
+
 			.usage-examples {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -633,13 +700,14 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-neutral-800);
 			}
 
-			.dark-example {
+			.hero-example {
 				padding: var(--spacing-lg);
-				background: var(--color-primary);
-				color: white;
+				background: var(--color-neutral-50);
 				display: flex;
 				align-items: center;
 				gap: var(--spacing-md);
+				flex-direction: column;
+				text-align: center;
 			}
 
 			.custom-example {
@@ -695,14 +763,27 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-tertiary);
 			}
 
+			.file-info {
+				margin: 0;
+				font-size: var(--font-size-sm);
+				color: var(--color-neutral-600);
+			}
+
+			.file-info code {
+				background: var(--color-neutral-200);
+				padding: 2px 4px;
+				border-radius: var(--border-radius-sm);
+				font-family: var(--font-family-mono);
+			}
+
 			/* Style personnalisé pour demo */
 			:global(.custom-logo) {
-				filter: hue-rotate(180deg);
-				transition: transform 0.3s ease;
+				transition: transform 0.3s ease, filter 0.3s ease;
 			}
 
 			:global(.custom-logo:hover) {
-				transform: scale(1.1);
+				transform: scale(1.1) rotate(5deg);
+				filter: hue-rotate(45deg);
 			}
 
 			/* Colors */
@@ -1077,6 +1158,16 @@ import Logo from '../components/Logo.astro';
 				.type-sample {
 					flex-direction: column;
 					align-items: flex-start;
+				}
+
+				.logo-sizes {
+					grid-template-columns: 1fr;
+					gap: var(--spacing-lg);
+				}
+
+				.usage-examples,
+				.responsive-examples {
+					grid-template-columns: 1fr;
 				}
 			}
 		</style>
