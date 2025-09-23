@@ -85,24 +85,6 @@ import Logo from '../components/Logo.astro';
 						</div>
 					</div>
 
-					<div class="logo-accessibility">
-						<h3>Caractéristiques</h3>
-						<div class="accessibility-info">
-							<div class="accessibility-item">
-								<h4>Couleurs d'origine préservées</h4>
-								<p>Le logo conserve ses couleurs originales sans modification automatique</p>
-							</div>
-							<div class="accessibility-item">
-								<h4>Alternative textuelle</h4>
-								<p>L'attribut <code>alt</code> est défini pour l'accessibilité des lecteurs d'écran</p>
-							</div>
-							<div class="accessibility-item">
-								<h4>Format SVG vectoriel</h4>
-								<p>Qualité parfaite à toutes les tailles, du plus petit au plus grand</p>
-							</div>
-						</div>
-					</div>
-
 					<div class="logo-code">
 						<h3>Comment utiliser</h3>
 						<div class="code-examples">
@@ -125,10 +107,6 @@ import Logo from '../components/Logo.astro';
 									<li><strong>class:</strong> string - Classes CSS personnalisées</li>
 								</ul>
 							</div>
-							<div class="code-block">
-								<h4>Fichier source</h4>
-								<p class="file-info">Le logo est chargé depuis <code>/public/img/logo.svg</code></p>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -139,19 +117,30 @@ import Logo from '../components/Logo.astro';
 				<h2>Couleurs</h2>
 				<div class="color-grid">
 					<div class="color-card">
-						<div class="color-sample color-primary"></div>
+						<div class="color-sample color-background"></div>
 						<div class="color-info">
-							<h3>Primary</h3>
-							<code>--color-primary</code>
-							<span class="color-value">#222222</span>
+							<h3>Background</h3>
+							<code>--color-background</code>
+							<span class="color-value">#FFE9D6</span>
+							<span class="color-description">Couleur de fond principale du site</span>
 						</div>
 					</div>
 					<div class="color-card">
-						<div class="color-sample color-secondary"></div>
+						<div class="color-sample color-text"></div>
 						<div class="color-info">
-							<h3>Secondary</h3>
-							<code>--color-secondary</code>
-							<span class="color-value">#FFE9D6</span>
+							<h3>Text Primary</h3>
+							<code>--color-text</code>
+							<span class="color-value">#222222</span>
+							<span class="color-description">Couleur principale pour la typographie</span>
+						</div>
+					</div>
+					<div class="color-card">
+						<div class="color-sample color-text-light"></div>
+						<div class="color-info">
+							<h3>Text Light</h3>
+							<code>--color-text-light</code>
+							<span class="color-value">#444444</span>
+							<span class="color-description">Couleur pour les textes secondaires</span>
 						</div>
 					</div>
 					<div class="color-card">
@@ -160,6 +149,7 @@ import Logo from '../components/Logo.astro';
 							<h3>Tertiary</h3>
 							<code>--color-tertiary</code>
 							<span class="color-value">#1669B6</span>
+							<span class="color-description">Couleur d'accentuation bleue</span>
 						</div>
 					</div>
 					<div class="color-card">
@@ -168,6 +158,16 @@ import Logo from '../components/Logo.astro';
 							<h3>Highlight</h3>
 							<code>--color-highlight</code>
 							<span class="color-value">#FF5C33</span>
+							<span class="color-description">Couleur pour les éléments importants</span>
+						</div>
+					</div>
+					<div class="color-card">
+						<div class="color-sample color-surface"></div>
+						<div class="color-info">
+							<h3>Surface</h3>
+							<code>--color-surface</code>
+							<span class="color-value">rgba(255,255,255,0.8)</span>
+							<span class="color-description">Couleur des cartes et surfaces</span>
 						</div>
 					</div>
 					<div class="color-card">
@@ -354,22 +354,31 @@ import Logo from '../components/Logo.astro';
 				<h2>Espacement</h2>
 				<div class="spacing-examples">
 					<div class="spacing-demo">
-						<h3>Margins & Padding</h3>
+						<h3>Variables d'espacement</h3>
 						<div class="spacing-grid">
 							<div class="spacing-item">
-								<div class="box m-xs">m-xs (4px)</div>
+								<div class="spacing-box spacing-xs">XS - 4px</div>
+								<code>var(--spacing-xs)</code>
 							</div>
 							<div class="spacing-item">
-								<div class="box m-sm">m-sm (8px)</div>
+								<div class="spacing-box spacing-sm">SM - 8px</div>
+								<code>var(--spacing-sm)</code>
 							</div>
 							<div class="spacing-item">
-								<div class="box m-md">m-md (16px)</div>
+								<div class="spacing-box spacing-md">MD - 16px</div>
+								<code>var(--spacing-md)</code>
 							</div>
 							<div class="spacing-item">
-								<div class="box m-lg">m-lg (24px)</div>
+								<div class="spacing-box spacing-lg">LG - 24px</div>
+								<code>var(--spacing-lg)</code>
 							</div>
 							<div class="spacing-item">
-								<div class="box m-xl">m-xl (32px)</div>
+								<div class="spacing-box spacing-xl">XL - 32px</div>
+								<code>var(--spacing-xl)</code>
+							</div>
+							<div class="spacing-item">
+								<div class="spacing-box spacing-2xl">2XL - 48px</div>
+								<code>var(--spacing-2xl)</code>
 							</div>
 						</div>
 					</div>
@@ -380,23 +389,69 @@ import Logo from '../components/Logo.astro';
 			<section class="section">
 				<h2>Système de grille</h2>
 				<div class="grid-examples">
-					<div class="grid grid-2">
-						<div class="grid-item">1/2</div>
-						<div class="grid-item">1/2</div>
+					<div class="grid-example-item">
+						<h3>Grille 2 colonnes</h3>
+						<div class="grid grid-2">
+							<div class="grid-item">1/2</div>
+							<div class="grid-item">1/2</div>
+						</div>
 					</div>
-					<div class="grid grid-3">
-						<div class="grid-item">1/3</div>
-						<div class="grid-item">1/3</div>
-						<div class="grid-item">1/3</div>
+					<div class="grid-example-item">
+						<h3>Grille 3 colonnes</h3>
+						<div class="grid grid-3">
+							<div class="grid-item">1/3</div>
+							<div class="grid-item">1/3</div>
+							<div class="grid-item">1/3</div>
+						</div>
 					</div>
-					<div class="grid grid-4">
-						<div class="grid-item">1/4</div>
-						<div class="grid-item">1/4</div>
-						<div class="grid-item">1/4</div>
-						<div class="grid-item">1/4</div>
+					<div class="grid-example-item">
+						<h3>Grille 4 colonnes</h3>
+						<div class="grid grid-4">
+							<div class="grid-item">1/4</div>
+							<div class="grid-item">1/4</div>
+							<div class="grid-item">1/4</div>
+							<div class="grid-item">1/4</div>
+						</div>
+					</div>
+					<div class="grid-example-item">
+						<h3>Grille responsive</h3>
+						<div class="grid grid-responsive">
+							<div class="grid-item">Auto</div>
+							<div class="grid-item">Auto</div>
+							<div class="grid-item">Auto</div>
+							<div class="grid-item">Auto</div>
+						</div>
 					</div>
 				</div>
 			</section>
+
+			<!-- Shadows & Effects -->
+			<section class="section">
+				<h2>Ombres et effets</h2>
+				<div class="shadow-examples">
+					<div class="shadow-card shadow-sm">
+						<h4>Small</h4>
+						<code>var(--shadow-sm)</code>
+					</div>
+					<div class="shadow-card shadow-md">
+						<h4>Medium</h4>
+						<code>var(--shadow-md)</code>
+					</div>
+					<div class="shadow-card shadow-lg">
+						<h4>Large</h4>
+						<code>var(--shadow-lg)</code>
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<footer class="design-system-footer">
+				<div class="footer-content">
+					<Logo size="xs" />
+					<p>Design System - Version 1.0</p>
+					<p class="footer-note">Tous les composants utilisent le nouveau schéma de couleurs avec le fond #FFE9D6 et la typographie #222222</p>
+				</div>
+			</footer>
 		</div>
 
 		<style>
@@ -409,16 +464,14 @@ import Logo from '../components/Logo.astro';
 				--color-success: #10b981;
 				--color-warning: #f59e0b;
 				--color-danger: #ef4444;
-				--color-neutral-50: #f8fafc;
-				--color-neutral-100: #f1f5f9;
-				--color-neutral-200: #e2e8f0;
-				--color-neutral-300: #cbd5e1;
-				--color-neutral-400: #94a3b8;
-				--color-neutral-500: #64748b;
-				--color-neutral-600: #475569;
-				--color-neutral-700: #334155;
-				--color-neutral-800: #1e293b;
-				--color-neutral-900: #0f172a;
+
+				/* Nouvelles couleurs principales */
+				--color-background: #FFE9D6;
+				--color-text: #222222;
+				--color-text-light: #444444;
+				--color-surface: rgba(255, 255, 255, 0.8);
+				--color-surface-hover: rgba(255, 255, 255, 0.9);
+				--color-border: rgba(34, 34, 34, 0.1);
 
 				--font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 				--font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
@@ -443,9 +496,9 @@ import Logo from '../components/Logo.astro';
 				--border-radius-md: 0.5rem;
 				--border-radius-lg: 0.75rem;
 
-				--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-				--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-				--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+				--shadow-sm: 0 1px 2px 0 rgb(34 34 34 / 0.05);
+				--shadow-md: 0 4px 6px -1px rgb(34 34 34 / 0.1), 0 2px 4px -2px rgb(34 34 34 / 0.1);
+				--shadow-lg: 0 10px 15px -3px rgb(34 34 34 / 0.1), 0 4px 6px -4px rgb(34 34 34 / 0.1);
 			}
 
 			/* Reset & Base Styles */
@@ -455,11 +508,20 @@ import Logo from '../components/Logo.astro';
 				box-sizing: border-box;
 			}
 
+			html {
+				height: 100%;
+			}
+
 			body {
 				font-family: var(--font-family-base);
 				line-height: 1.6;
-				color: var(--color-neutral-800);
-				background-color: var(--color-neutral-50);
+				color: var(--color-text);
+				background-color: var(--color-background);
+				min-height: 100vh;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				color: var(--color-text);
 			}
 
 			/* Layout */
@@ -475,7 +537,7 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.subtitle {
-				color: var(--color-neutral-600);
+				color: var(--color-text-light);
 				font-size: var(--font-size-lg);
 				margin-top: var(--spacing-sm);
 			}
@@ -488,7 +550,8 @@ import Logo from '../components/Logo.astro';
 				font-size: var(--font-size-2xl);
 				margin-bottom: var(--spacing-lg);
 				padding-bottom: var(--spacing-sm);
-				border-bottom: 2px solid var(--color-neutral-200);
+				border-bottom: 2px solid var(--color-border);
+				color: var(--color-text);
 			}
 
 			/* Logo Styles */
@@ -500,21 +563,20 @@ import Logo from '../components/Logo.astro';
 
 			.logo-size-demo,
 			.logo-usage,
-			.logo-accessibility,
 			.logo-code {
-				background: white;
+				background: var(--color-surface);
 				padding: var(--spacing-xl);
 				border-radius: var(--border-radius-lg);
 				box-shadow: var(--shadow-sm);
+				border: 1px solid var(--color-border);
 			}
 
 			.logo-size-demo h3,
 			.logo-usage h3,
-			.logo-accessibility h3,
 			.logo-code h3 {
 				margin-bottom: var(--spacing-lg);
 				font-size: var(--font-size-lg);
-				color: var(--color-neutral-800);
+				color: var(--color-text);
 			}
 
 			.logo-sizes {
@@ -535,115 +597,16 @@ import Logo from '../components/Logo.astro';
 			.logo-label {
 				font-size: var(--font-size-sm);
 				font-weight: 500;
-				color: var(--color-neutral-700);
+				color: var(--color-text);
 			}
 
 			.logo-item code,
 			.code-block code {
 				font-family: var(--font-family-mono);
 				font-size: var(--font-size-xs);
-				color: var(--color-neutral-600);
-				background: var(--color-neutral-100);
+				color: var(--color-text-light);
+				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs);
-				border-radius: var(--border-radius-sm);
-			}
-
-			.logo-variants {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-				gap: var(--spacing-lg);
-			}
-
-			.logo-variant-item {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: var(--spacing-sm);
-				text-align: center;
-			}
-
-			.logo-background {
-				padding: var(--spacing-lg);
-				border-radius: var(--border-radius-md);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				min-height: 100px;
-			}
-
-			.logo-background.light {
-				background-color: var(--color-neutral-100);
-				border: 1px solid var(--color-neutral-200);
-			}
-
-			.logo-background.dark {
-				background-color: var(--color-primary);
-			}
-
-			/* Responsive demo */
-			.responsive-examples {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-				gap: var(--spacing-lg);
-			}
-
-			.responsive-example {
-				border: 1px solid var(--color-neutral-200);
-				border-radius: var(--border-radius-md);
-				overflow: hidden;
-			}
-
-			.responsive-example h4 {
-				margin: 0;
-				padding: var(--spacing-md);
-				background: var(--color-neutral-50);
-				font-size: var(--font-size-base);
-				border-bottom: 1px solid var(--color-neutral-200);
-			}
-
-			.desktop-preview,
-			.mobile-preview {
-				padding: var(--spacing-lg);
-				display: flex;
-				align-items: center;
-				gap: var(--spacing-md);
-				background: white;
-			}
-
-			.mobile-preview {
-				background: var(--color-neutral-25);
-				padding: var(--spacing-md);
-			}
-
-			/* Accessibility */
-			.accessibility-info {
-				display: grid;
-				gap: var(--spacing-lg);
-			}
-
-			.accessibility-item {
-				padding: var(--spacing-md);
-				border-left: 4px solid var(--color-tertiary);
-				background: var(--color-neutral-50);
-				border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
-			}
-
-			.accessibility-item h4 {
-				margin-bottom: var(--spacing-xs);
-				font-size: var(--font-size-base);
-				color: var(--color-tertiary);
-			}
-
-			.accessibility-item p {
-				margin: 0;
-				font-size: var(--font-size-sm);
-				color: var(--color-neutral-600);
-			}
-
-			.accessibility-item code {
-				font-family: var(--font-family-mono);
-				background: var(--color-neutral-200);
-				padding: 2px 4px;
 				border-radius: var(--border-radius-sm);
 			}
 
@@ -654,17 +617,19 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.usage-example {
-				border: 1px solid var(--color-neutral-200);
+				border: 1px solid var(--color-border);
 				border-radius: var(--border-radius-md);
 				overflow: hidden;
+				background: var(--color-surface);
 			}
 
 			.usage-example h4 {
 				margin: 0;
 				padding: var(--spacing-md);
-				background: var(--color-neutral-50);
+				background: rgba(255, 255, 255, 0.3);
 				font-size: var(--font-size-base);
-				border-bottom: 1px solid var(--color-neutral-200);
+				border-bottom: 1px solid var(--color-border);
+				color: var(--color-text);
 			}
 
 			.nav-example {
@@ -672,12 +637,12 @@ import Logo from '../components/Logo.astro';
 				align-items: center;
 				gap: var(--spacing-lg);
 				padding: var(--spacing-md);
-				background: white;
+				background: var(--color-surface);
 			}
 
 			.nav-example span {
 				font-weight: 500;
-				color: var(--color-neutral-800);
+				color: var(--color-text);
 			}
 
 			.nav-example nav {
@@ -687,7 +652,7 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.nav-example nav a {
-				color: var(--color-neutral-600);
+				color: var(--color-text-light);
 				text-decoration: none;
 				font-size: var(--font-size-sm);
 				padding: var(--spacing-xs) var(--spacing-sm);
@@ -696,13 +661,14 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.nav-example nav a:hover {
-				background-color: var(--color-neutral-100);
-				color: var(--color-neutral-800);
+				background-color: rgba(255, 255, 255, 0.5);
+				color: var(--color-text);
 			}
 
-			.hero-example {
+			.hero-example,
+			.custom-example {
 				padding: var(--spacing-lg);
-				background: var(--color-neutral-50);
+				background: var(--color-surface);
 				display: flex;
 				align-items: center;
 				gap: var(--spacing-md);
@@ -710,12 +676,10 @@ import Logo from '../components/Logo.astro';
 				text-align: center;
 			}
 
-			.custom-example {
-				padding: var(--spacing-lg);
-				background: var(--color-neutral-50);
-				display: flex;
-				align-items: center;
-				gap: var(--spacing-md);
+			.hero-example p,
+			.custom-example p {
+				color: var(--color-text-light);
+				margin: 0;
 			}
 
 			.code-examples {
@@ -724,21 +688,21 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.code-block {
-				background: var(--color-neutral-50);
+				background: rgba(255, 255, 255, 0.3);
 				padding: var(--spacing-md);
 				border-radius: var(--border-radius-md);
-				border: 1px solid var(--color-neutral-200);
+				border: 1px solid var(--color-border);
 			}
 
 			.code-block h4 {
 				margin-bottom: var(--spacing-sm);
 				font-size: var(--font-size-base);
-				color: var(--color-neutral-800);
+				color: var(--color-text);
 			}
 
 			.code-block pre {
-				background: var(--color-neutral-800);
-				color: var(--color-neutral-100);
+				background: var(--color-text);
+				color: var(--color-background);
 				padding: var(--spacing-md);
 				border-radius: var(--border-radius-sm);
 				overflow-x: auto;
@@ -756,24 +720,11 @@ import Logo from '../components/Logo.astro';
 				padding: var(--spacing-xs) 0;
 				font-family: var(--font-family-mono);
 				font-size: var(--font-size-sm);
-				color: var(--color-neutral-700);
+				color: var(--color-text);
 			}
 
 			.props-list strong {
 				color: var(--color-tertiary);
-			}
-
-			.file-info {
-				margin: 0;
-				font-size: var(--font-size-sm);
-				color: var(--color-neutral-600);
-			}
-
-			.file-info code {
-				background: var(--color-neutral-200);
-				padding: 2px 4px;
-				border-radius: var(--border-radius-sm);
-				font-family: var(--font-family-mono);
 			}
 
 			/* Style personnalisé pour demo */
@@ -789,27 +740,31 @@ import Logo from '../components/Logo.astro';
 			/* Colors */
 			.color-grid {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 				gap: var(--spacing-md);
 			}
 
 			.color-card {
-				background: white;
+				background: var(--color-surface);
 				border-radius: var(--border-radius-md);
 				padding: var(--spacing-md);
 				box-shadow: var(--shadow-sm);
+				border: 1px solid var(--color-border);
 			}
 
 			.color-sample {
-				height: 60px;
+				height: 80px;
 				border-radius: var(--border-radius-sm);
 				margin-bottom: var(--spacing-sm);
+				border: 1px solid var(--color-border);
 			}
 
-			.color-primary { background-color: var(--color-primary); }
-			.color-secondary { background-color: var(--color-secondary); }
+			.color-background { background-color: var(--color-background); }
+			.color-text { background-color: var(--color-text); }
+			.color-text-light { background-color: var(--color-text-light); }
 			.color-tertiary { background-color: var(--color-tertiary); }
 			.color-highlight { background-color: var(--color-highlight); }
+			.color-surface { background-color: var(--color-surface); }
 			.color-success { background-color: var(--color-success); }
 			.color-warning { background-color: var(--color-warning); }
 			.color-danger { background-color: var(--color-danger); }
@@ -817,19 +772,32 @@ import Logo from '../components/Logo.astro';
 			.color-info h3 {
 				font-size: var(--font-size-base);
 				margin-bottom: var(--spacing-xs);
+				color: var(--color-text);
 			}
 
 			.color-info code {
 				display: block;
 				font-family: var(--font-family-mono);
 				font-size: var(--font-size-sm);
-				color: var(--color-neutral-600);
+				color: var(--color-text-light);
 				margin-bottom: var(--spacing-xs);
+				background: rgba(255, 255, 255, 0.5);
+				padding: var(--spacing-xs);
+				border-radius: var(--border-radius-sm);
 			}
 
 			.color-value {
 				font-size: var(--font-size-sm);
-				color: var(--color-neutral-500);
+				color: var(--color-text-light);
+				font-family: var(--font-family-mono);
+				display: block;
+				margin-bottom: var(--spacing-xs);
+			}
+
+			.color-description {
+				font-size: var(--font-size-xs);
+				color: var(--color-text-light);
+				font-style: italic;
 			}
 
 			/* Typography */
@@ -844,21 +812,23 @@ import Logo from '../components/Logo.astro';
 				align-items: center;
 				gap: var(--spacing-lg);
 				padding: var(--spacing-md);
-				background: white;
+				background: var(--color-surface);
 				border-radius: var(--border-radius-md);
 				box-shadow: var(--shadow-sm);
+				border: 1px solid var(--color-border);
 			}
 
 			.type-sample > *:first-child {
 				flex: 1;
 				margin: 0;
+				color: var(--color-text);
 			}
 
 			.type-sample code {
 				font-family: var(--font-family-mono);
 				font-size: var(--font-size-sm);
-				color: var(--color-neutral-600);
-				background: var(--color-neutral-100);
+				color: var(--color-text-light);
+				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs) var(--spacing-sm);
 				border-radius: var(--border-radius-sm);
 			}
@@ -885,22 +855,26 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.btn-primary {
-				background-color: var(--color-primary);
-				color: white;
+				background-color: var(--color-text);
+				color: var(--color-background);
 			}
 
 			.btn-primary:hover:not(:disabled) {
 				background-color: #000000;
+				transform: translateY(-1px);
+				box-shadow: var(--shadow-md);
 			}
 
 			.btn-secondary {
-				background-color: var(--color-secondary);
-				color: var(--color-primary);
-				border: 1px solid var(--color-primary);
+				background-color: var(--color-surface);
+				color: var(--color-text);
+				border: 1px solid var(--color-text);
 			}
 
 			.btn-secondary:hover:not(:disabled) {
-				background-color: #F5D5B8;
+				background-color: var(--color-surface-hover);
+				transform: translateY(-1px);
+				box-shadow: var(--shadow-md);
 			}
 
 			.btn-tertiary {
@@ -910,6 +884,8 @@ import Logo from '../components/Logo.astro';
 
 			.btn-tertiary:hover:not(:disabled) {
 				background-color: #125A9A;
+				transform: translateY(-1px);
+				box-shadow: var(--shadow-md);
 			}
 
 			.btn-highlight {
@@ -919,26 +895,31 @@ import Logo from '../components/Logo.astro';
 
 			.btn-highlight:hover:not(:disabled) {
 				background-color: #E6421A;
+				transform: translateY(-1px);
+				box-shadow: var(--shadow-md);
 			}
 
 			.btn-outline {
 				background-color: transparent;
-				color: var(--color-tertiary);
-				border-color: var(--color-tertiary);
+				color: var(--color-text);
+				border-color: var(--color-text);
 			}
 
 			.btn-outline:hover:not(:disabled) {
-				background-color: var(--color-tertiary);
-				color: white;
+				background-color: var(--color-text);
+				color: var(--color-background);
+				transform: translateY(-1px);
+				box-shadow: var(--shadow-md);
 			}
 
 			.btn-ghost {
 				background-color: transparent;
-				color: var(--color-neutral-700);
+				color: var(--color-text-light);
 			}
 
 			.btn-ghost:hover:not(:disabled) {
-				background-color: var(--color-neutral-100);
+				background-color: rgba(255, 255, 255, 0.5);
+				color: var(--color-text);
 			}
 
 			.btn:disabled {
@@ -953,15 +934,17 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.component-example {
-				background: white;
+				background: var(--color-surface);
 				padding: var(--spacing-lg);
 				border-radius: var(--border-radius-md);
 				box-shadow: var(--shadow-sm);
+				border: 1px solid var(--color-border);
 			}
 
 			.component-example h3 {
 				margin-bottom: var(--spacing-md);
 				font-size: var(--font-size-base);
+				color: var(--color-text);
 			}
 
 			.button-group {
@@ -975,10 +958,11 @@ import Logo from '../components/Logo.astro';
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 				gap: var(--spacing-lg);
-				background: white;
-				padding: var(--spacing-lg);
-				border-radius: var(--border-radius-md);
+				background: var(--color-surface);
+				padding: var(--spacing-xl);
+				border-radius: var(--border-radius-lg);
 				box-shadow: var(--shadow-sm);
+				border: 1px solid var(--color-border);
 			}
 
 			.form-group {
@@ -989,7 +973,7 @@ import Logo from '../components/Logo.astro';
 
 			.form-group label {
 				font-weight: 500;
-				color: var(--color-neutral-700);
+				color: var(--color-text);
 			}
 
 			input[type="text"],
@@ -998,10 +982,12 @@ import Logo from '../components/Logo.astro';
 			textarea,
 			select {
 				padding: var(--spacing-sm);
-				border: 1px solid var(--color-neutral-300);
+				border: 1px solid var(--color-border);
 				border-radius: var(--border-radius-md);
 				font-size: var(--font-size-base);
-				transition: border-color 0.2s ease;
+				transition: border-color 0.2s ease, box-shadow 0.2s ease;
+				background-color: rgba(255, 255, 255, 0.8);
+				color: var(--color-text);
 			}
 
 			input:focus,
@@ -1010,6 +996,7 @@ import Logo from '../components/Logo.astro';
 				outline: none;
 				border-color: var(--color-tertiary);
 				box-shadow: 0 0 0 3px rgb(22 105 182 / 0.1);
+				background-color: rgba(255, 255, 255, 0.9);
 			}
 
 			textarea {
@@ -1023,16 +1010,19 @@ import Logo from '../components/Logo.astro';
 				align-items: center;
 				gap: var(--spacing-xs);
 				cursor: pointer;
+				color: var(--color-text);
 			}
 
 			.checkmark,
 			.radiomark {
 				width: 18px;
 				height: 18px;
-				border: 2px solid var(--color-neutral-300);
+				border: 2px solid var(--color-border);
 				border-radius: var(--border-radius-sm);
 				display: inline-block;
 				position: relative;
+				background-color: rgba(255, 255, 255, 0.8);
+				transition: all 0.2s ease;
 			}
 
 			.radiomark {
@@ -1049,9 +1039,32 @@ import Logo from '../components/Logo.astro';
 				border-color: var(--color-tertiary);
 			}
 
+			input[type="checkbox"]:checked + .checkmark::after {
+				content: '✓';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+				font-size: 12px;
+				font-weight: bold;
+			}
+
 			input[type="radio"]:checked + .radiomark {
 				background-color: var(--color-tertiary);
 				border-color: var(--color-tertiary);
+			}
+
+			input[type="radio"]:checked + .radiomark::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background-color: white;
 			}
 
 			/* Cards */
@@ -1062,63 +1075,132 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.card {
-				background: white;
+				background: var(--color-surface);
 				border-radius: var(--border-radius-lg);
 				box-shadow: var(--shadow-sm);
 				overflow: hidden;
+				border: 1px solid var(--color-border);
+				transition: all 0.2s ease;
+			}
+
+			.card:hover {
+				transform: translateY(-2px);
+				box-shadow: var(--shadow-md);
 			}
 
 			.card-elevated {
 				box-shadow: var(--shadow-lg);
 			}
 
+			.card-elevated:hover {
+				box-shadow: var(--shadow-lg);
+				transform: translateY(-4px);
+			}
+
 			.card-header {
 				padding: var(--spacing-lg);
-				border-bottom: 1px solid var(--color-neutral-200);
+				border-bottom: 1px solid var(--color-border);
+				background: rgba(255, 255, 255, 0.3);
 			}
 
 			.card-header h3 {
 				margin: 0;
 				font-size: var(--font-size-lg);
+				color: var(--color-text);
 			}
 
 			.card-body {
 				padding: var(--spacing-lg);
 			}
 
+			.card-body p {
+				color: var(--color-text-light);
+				margin: 0;
+				line-height: 1.6;
+			}
+
 			.card-footer {
 				padding: var(--spacing-lg);
-				border-top: 1px solid var(--color-neutral-200);
-				background: var(--color-neutral-50);
+				border-top: 1px solid var(--color-border);
+				background: rgba(255, 255, 255, 0.3);
 			}
 
-			/* Spacing */
+			/* Spacing Demo Styles */
+			.spacing-examples {
+				background: var(--color-surface);
+				padding: var(--spacing-xl);
+				border-radius: var(--border-radius-lg);
+				box-shadow: var(--shadow-sm);
+				border: 1px solid var(--color-border);
+			}
+
+			.spacing-examples h3 {
+				margin-bottom: var(--spacing-lg);
+				color: var(--color-text);
+			}
+
 			.spacing-grid {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-				gap: var(--spacing-md);
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: var(--spacing-lg);
 			}
 
-			.box {
+			.spacing-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: var(--spacing-sm);
+				text-align: center;
+			}
+
+			.spacing-box {
 				background: var(--color-tertiary);
 				color: white;
-				padding: var(--spacing-sm);
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				border-radius: var(--border-radius-sm);
-				text-align: center;
 				font-size: var(--font-size-sm);
+				font-weight: 500;
+				min-height: 50px;
+				width: 100%;
 			}
 
-			.m-xs { margin: 4px; }
-			.m-sm { margin: 8px; }
-			.m-md { margin: 16px; }
-			.m-lg { margin: 24px; }
-			.m-xl { margin: 32px; }
+			.spacing-xs { padding: var(--spacing-xs); }
+			.spacing-sm { padding: var(--spacing-sm); }
+			.spacing-md { padding: var(--spacing-md); }
+			.spacing-lg { padding: var(--spacing-lg); }
+			.spacing-xl { padding: var(--spacing-xl); }
+			.spacing-2xl { padding: var(--spacing-2xl); }
+
+			.spacing-item code {
+				font-family: var(--font-family-mono);
+				font-size: var(--font-size-xs);
+				color: var(--color-text-light);
+				background: rgba(255, 255, 255, 0.5);
+				padding: var(--spacing-xs);
+				border-radius: var(--border-radius-sm);
+			}
 
 			/* Grid System */
 			.grid-examples {
 				display: flex;
 				flex-direction: column;
-				gap: var(--spacing-md);
+				gap: var(--spacing-xl);
+			}
+
+			.grid-example-item {
+				background: var(--color-surface);
+				padding: var(--spacing-lg);
+				border-radius: var(--border-radius-md);
+				box-shadow: var(--shadow-sm);
+				border: 1px solid var(--color-border);
+			}
+
+			.grid-example-item h3 {
+				margin-bottom: var(--spacing-md);
+				font-size: var(--font-size-base);
+				color: var(--color-text);
 			}
 
 			.grid {
@@ -1129,6 +1211,7 @@ import Logo from '../components/Logo.astro';
 			.grid-2 { grid-template-columns: repeat(2, 1fr); }
 			.grid-3 { grid-template-columns: repeat(3, 1fr); }
 			.grid-4 { grid-template-columns: repeat(4, 1fr); }
+			.grid-responsive { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 
 			.grid-item {
 				background: var(--color-highlight);
@@ -1136,6 +1219,83 @@ import Logo from '../components/Logo.astro';
 				padding: var(--spacing-md);
 				text-align: center;
 				border-radius: var(--border-radius-sm);
+				font-weight: 500;
+				transition: transform 0.2s ease;
+			}
+
+			.grid-item:hover {
+				transform: scale(1.02);
+			}
+
+			/* Shadow Examples */
+			.shadow-examples {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: var(--spacing-lg);
+			}
+
+			.shadow-card {
+				background: var(--color-surface);
+				padding: var(--spacing-lg);
+				border-radius: var(--border-radius-md);
+				text-align: center;
+				border: 1px solid var(--color-border);
+				transition: all 0.2s ease;
+			}
+
+			.shadow-card:hover {
+				transform: translateY(-2px);
+			}
+
+			.shadow-card h4 {
+				margin-bottom: var(--spacing-sm);
+				color: var(--color-text);
+			}
+
+			.shadow-card code {
+				font-family: var(--font-family-mono);
+				font-size: var(--font-size-xs);
+				color: var(--color-text-light);
+				background: rgba(255, 255, 255, 0.5);
+				padding: var(--spacing-xs);
+				border-radius: var(--border-radius-sm);
+			}
+
+			.shadow-sm { box-shadow: var(--shadow-sm); }
+			.shadow-md { box-shadow: var(--shadow-md); }
+			.shadow-lg { box-shadow: var(--shadow-lg); }
+
+			/* Footer */
+			.design-system-footer {
+				margin-top: var(--spacing-2xl);
+				padding: var(--spacing-2xl);
+				border-top: 2px solid var(--color-border);
+				background: var(--color-surface);
+				border-radius: var(--border-radius-lg);
+				box-shadow: var(--shadow-sm);
+				border: 1px solid var(--color-border);
+			}
+
+			.design-system-footer .footer-content {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: var(--spacing-md);
+				text-align: center;
+			}
+
+			.design-system-footer p {
+				margin: 0;
+				color: var(--color-text);
+				font-weight: 500;
+			}
+
+			.footer-note {
+				font-size: var(--font-size-sm);
+				color: var(--color-text-light) !important;
+				font-style: italic;
+				max-width: 600px;
+				font-weight: normal !important;
 			}
 
 			/* Responsive */
@@ -1150,14 +1310,10 @@ import Logo from '../components/Logo.astro';
 					grid-template-columns: 1fr;
 				}
 
-				.grid-3,
-				.grid-4 {
-					grid-template-columns: 1fr;
-				}
-
 				.type-sample {
 					flex-direction: column;
 					align-items: flex-start;
+					gap: var(--spacing-sm);
 				}
 
 				.logo-sizes {
@@ -1165,9 +1321,58 @@ import Logo from '../components/Logo.astro';
 					gap: var(--spacing-lg);
 				}
 
-				.usage-examples,
-				.responsive-examples {
+				.usage-examples {
 					grid-template-columns: 1fr;
+				}
+
+				.color-grid {
+					grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				}
+
+				.spacing-grid {
+					grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+				}
+
+				.shadow-examples {
+					grid-template-columns: 1fr;
+				}
+
+				.grid-3,
+				.grid-4,
+				.grid-responsive {
+					grid-template-columns: 1fr;
+				}
+
+				.nav-example {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: var(--spacing-sm);
+				}
+
+				.nav-example nav {
+					margin-left: 0;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.container {
+					padding: var(--spacing-sm);
+				}
+
+				.header h1 {
+					font-size: var(--font-size-2xl);
+				}
+
+				.section h2 {
+					font-size: var(--font-size-xl);
+				}
+
+				.button-group {
+					flex-direction: column;
+				}
+
+				.btn {
+					width: 100%;
 				}
 			}
 		</style>
