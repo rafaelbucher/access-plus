@@ -17,7 +17,7 @@ import Logo from '../components/Logo.astro';
 		
 		<header class="td-header">
 			<div class="td-container">
-				<Logo size="xl" />
+				<Logo size="xl" variant="default" />
 			</div>
 		</header>
 
@@ -26,7 +26,8 @@ import Logo from '../components/Logo.astro';
 				<h1>Design System</h1>
 				<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
 			</section>
-			<!-- Logo -->
+
+			<!-- Logo Section Améliorée -->
 			<section class="td-section">
 				<h2>Logo</h2>
 				<div class="logo-examples">
@@ -61,6 +62,60 @@ import Logo from '../components/Logo.astro';
 						</div>
 					</div>
 
+					<!-- Nouvelle section : Variantes de couleur -->
+					<div class="logo-variants-demo">
+						<h3>Variantes de couleur</h3>
+						<div class="variants-grid">
+							<div class="variant-item">
+								<Logo size="lg" variant="default" />
+								<span class="variant-label">Default</span>
+								<code>variant="default"</code>
+							</div>
+							<div class="variant-item dark-background">
+								<Logo size="lg" variant="light" />
+								<span class="variant-label">Light</span>
+								<code>variant="light"</code>
+							</div>
+							<div class="variant-item">
+								<Logo size="lg" variant="dark" />
+								<span class="variant-label">Dark</span>
+								<code>variant="dark"</code>
+							</div>
+							<div class="variant-item">
+								<Logo size="lg" variant="blue" />
+								<span class="variant-label">Blue</span>
+								<code>variant="blue"</code>
+							</div>
+							<div class="variant-item">
+								<Logo size="lg" variant="orange" />
+								<span class="variant-label">Orange</span>
+								<code>variant="orange"</code>
+							</div>
+						</div>
+					</div>
+
+					<!-- Nouvelle section : Animations et effets -->
+					<div class="logo-animations-demo">
+						<h3>Animations et effets</h3>
+						<div class="animations-grid">
+							<div class="animation-item">
+								<Logo size="lg" class="animate-pulse" />
+								<span class="animation-label">Pulse</span>
+								<code>class="animate-pulse"</code>
+							</div>
+							<div class="animation-item">
+								<Logo size="lg" class="custom-hover-effect" />
+								<span class="animation-label">Hover Effect</span>
+								<code>class="custom-hover-effect"</code>
+							</div>
+							<div class="animation-item">
+								<Logo size="lg" class="custom-shadow-effect" />
+								<span class="animation-label">Shadow</span>
+								<code>class="custom-shadow-effect"</code>
+							</div>
+						</div>
+					</div>
+
 					<div class="logo-code">
 						<h3>Comment utiliser</h3>
 						<div class="code-examples">
@@ -74,14 +129,70 @@ import Logo from '../components/Logo.astro';
 								<h4>Utilisation basique</h4>
 								<pre><code>&lt;Logo /&gt;
 &lt;Logo size="lg" /&gt;
-&lt;Logo size="xl" class="my-logo" /&gt;</code></pre>
+&lt;Logo size="xl" variant="blue" /&gt;
+&lt;Logo class="my-custom-class" /&gt;</code></pre>
 							</div>
 							<div class="code-block">
 								<h4>Props disponibles</h4>
 								<ul class="props-list">
 									<li><strong>size:</strong> 'xs' | 'sm' | 'md' | 'lg' | 'xl' (défaut: 'md')</li>
+									<li><strong>variant:</strong> 'default' | 'light' | 'dark' | 'blue' | 'orange' (défaut: 'default')</li>
 									<li><strong>class:</strong> string - Classes CSS personnalisées</li>
 								</ul>
+							</div>
+							<div class="code-block">
+								<h4>Exemples d'usage contextuel</h4>
+								<pre><code>// Header
+&lt;Logo size="sm" variant="default" /&gt;
+
+// Footer sur fond sombre
+&lt;Logo size="xs" variant="light" /&gt;
+
+// Page d'accueil
+&lt;Logo size="xl" variant="default" /&gt;
+
+// Avec animation
+&lt;Logo size="lg" class="animate-pulse" /&gt;</code></pre>
+							</div>
+						</div>
+					</div>
+
+					<!-- Nouvelle section : Usage contextuel -->
+					<div class="logo-context-demo">
+						<h3>Usage contextuel</h3>
+						
+						<!-- Header demo -->
+						<div class="context-example">
+							<h4>Dans un header</h4>
+							<div class="demo-header">
+								<Logo size="sm" variant="default" />
+								<nav class="demo-nav">
+									<a href="#">Accueil</a>
+									<a href="#">Services</a>
+									<a href="#">Contact</a>
+								</nav>
+							</div>
+						</div>
+
+						<!-- Footer demo -->
+						<div class="context-example">
+							<h4>Dans un footer</h4>
+							<div class="demo-footer">
+								<div class="footer-content">
+									<Logo size="xs" variant="light" />
+									<p>© 2024 Notre entreprise. Tous droits réservés.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Card demo -->
+						<div class="context-example">
+							<h4>Dans une carte</h4>
+							<div class="demo-card">
+								<Logo size="sm" variant="blue" />
+								<h5>Notre service premium</h5>
+								<p>Découvrez notre offre avec ce logo intégré dans le design de la carte.</p>
+								<button class="td-btn td-btn-small td-btn-primary">En savoir plus</button>
 							</div>
 						</div>
 					</div>
@@ -97,7 +208,7 @@ import Logo from '../components/Logo.astro';
 						<div class="color-info">
 							<h3>Background</h3>
 							<code>--color-background</code>
-							<span class="color-value">#FFE9D6</span>
+							<span class="color-value">#faf5dd</span>
 							<span class="color-description">Couleur de fond principale du site</span>
 						</div>
 					</div>
@@ -125,7 +236,7 @@ import Logo from '../components/Logo.astro';
 							<h3>Tertiary</h3>
 							<code>--color-tertiary</code>
 							<span class="color-value">#1669B6</span>
-							<span class="color-description">Couleur d'accentuation bleue</span>
+							<span class="color-description">Couleur d'accentuation bleue (utilisée dans le logo)</span>
 						</div>
 					</div>
 					<div class="color-card">
@@ -134,7 +245,7 @@ import Logo from '../components/Logo.astro';
 							<h3>Highlight</h3>
 							<code>--color-highlight</code>
 							<span class="color-value">#FF5C33</span>
-							<span class="color-description">Couleur pour les éléments importants</span>
+							<span class="color-description">Couleur pour les éléments importants (variante orange du logo)</span>
 						</div>
 					</div>
 					<div class="color-card">
@@ -226,10 +337,10 @@ import Logo from '../components/Logo.astro';
 						<button class="td-btn td-btn-tertiary" disabled>Button tertiary disabled</button>
 					</div>
 					<div class="td-button-group">
-						<h3>hightlight Buttons</h3>
-						<button class="td-btn td-btn-highlight">Button tertiary</button>
-						<button class="td-btn td-btn-highlight td-btn-outline">Button hightlightmax outline</button>
-						<button class="td-btn td-btn-highlight" disabled>Button hightlightmax disabled</button>
+						<h3>Highlight Buttons</h3>
+						<button class="td-btn td-btn-highlight">Button highlight</button>
+						<button class="td-btn td-btn-highlight td-btn-outline">Button highlight outline</button>
+						<button class="td-btn td-btn-highlight" disabled>Button highlight disabled</button>
 					</div>
 					<div class="td-button-group">
 						<h3>Success Buttons</h3>
@@ -246,24 +357,24 @@ import Logo from '../components/Logo.astro';
 					<div class="td-button-group">
 						<h3>Danger Buttons</h3>
 						<button class="td-btn td-btn-danger">Button danger</button>
-						<button class="td-btn td-btn-danger td-btn-outline">Button danger disabled</button>
+						<button class="td-btn td-btn-danger td-btn-outline">Button danger outline</button>
 						<button class="td-btn td-btn-danger" disabled>Button danger disabled</button>
 					</div>
 					
 					<div class="td-button-group">
-						<h3>Highlight Buttons</h3>
+						<h3>Large Buttons</h3>
 						<button class="td-btn td-btn-max td-btn-primary">Button primary</button>
 						<button class="td-btn td-btn-max td-btn-primary" disabled>Button primary disabled</button>
 						<button class="td-btn td-btn-max td-btn-secondary">Button secondary</button>
 						<button class="td-btn td-btn-max td-btn-tertiary">Button tertiary</button>
 						<button class="td-btn td-btn-max td-btn-highlight">Button highlight</button>
-						<button class="td-btn td-btn-max td-btn-success" disabled>Button success</button>
-						<button class="td-btn td-btn-max td-btn-warning" disabled>Button warning</button>
-						<button class="td-btn td-btn-max td-btn-danger" disabled>Button danger</button>
+						<button class="td-btn td-btn-max td-btn-success">Button success</button>
+						<button class="td-btn td-btn-max td-btn-warning">Button warning</button>
+						<button class="td-btn td-btn-max td-btn-danger">Button danger</button>
 					</div>
 					
 					<div class="td-button-group">
-						<h3>Min Buttons</h3>
+						<h3>Small Buttons</h3>
 						<button class="td-btn td-btn-small td-btn-primary">Button primary</button>
 						<button class="td-btn td-btn-small td-btn-primary" disabled>Button primary disabled</button>
 						<button class="td-btn td-btn-small td-btn-secondary">Button secondary</button>
@@ -274,53 +385,6 @@ import Logo from '../components/Logo.astro';
 					</div>
 
 				</div>
-
-				<!--
-				<div class="component-grid">
-					<div class="component-example">
-						<h3>Primary</h3>
-						<div class="button-group">
-							<button class="btn btn-primary">Button</button>
-							<button class="btn btn-primary" disabled>Disabled</button>
-						</div>
-					</div>
-					<div class="component-example">
-						<h3>Secondary</h3>
-						<div class="button-group">
-							<button class="btn btn-secondary">Button</button>
-							<button class="btn btn-secondary" disabled>Disabled</button>
-						</div>
-					</div>
-					<div class="component-example">
-						<h3>Tertiary</h3>
-						<div class="button-group">
-							<button class="btn btn-tertiary">Button</button>
-							<button class="btn btn-tertiary" disabled>Disabled</button>
-						</div>
-					</div>
-					<div class="component-example">
-						<h3>Highlight</h3>
-						<div class="button-group">
-							<button class="btn btn-highlight">Button</button>
-							<button class="btn btn-highlight" disabled>Disabled</button>
-						</div>
-					</div>
-					<div class="component-example">
-						<h3>Outline</h3>
-						<div class="button-group">
-							<button class="btn btn-outline">Button</button>
-							<button class="btn btn-outline" disabled>Disabled</button>
-						</div>
-					</div>
-					<div class="component-example">
-						<h3>Ghost</h3>
-						<div class="button-group">
-							<button class="btn btn-ghost">Button</button>
-							<button class="btn btn-ghost" disabled>Disabled</button>
-						</div>
-					</div>
-				</div>
-				 -->
 			</section>
 
 			<!-- Form Elements -->
@@ -390,6 +454,15 @@ import Logo from '../components/Logo.astro';
 						</div>
 						<div class="card-body">
 							<p>Cette carte utilise une ombre plus prononcée pour créer un effet d'élévation.</p>
+						</div>
+					</div>
+					<div class="card card-with-logo">
+						<div class="card-header">
+							<Logo size="xs" variant="blue" />
+							<h3>Carte avec logo</h3>
+						</div>
+						<div class="card-body">
+							<p>Exemple d'intégration du logo dans une carte pour renforcer l'identité visuelle.</p>
 						</div>
 					</div>
 				</div>
@@ -495,9 +568,11 @@ import Logo from '../components/Logo.astro';
 		<!-- Footer -->
 		<footer class="td-footer">
 			<div class="td-container">
-				<Logo size="xs" />
-				<p>Design System - Version 1.0</p>
-				<p class="footer-note">Tous les composants utilisent le nouveau schéma de couleurs avec le fond #FFE9D6 et la typographie #222222</p>
+				<Logo size="xs" variant="default" />
+				<div class="footer-info">
+					<p><strong>Design System - Version 2.0</strong></p>
+					<p class="footer-note">Mise à jour avec le nouveau composant Logo SVG inline. Toutes les variantes et animations sont maintenant disponibles.</p>
+				</div>
 		 	</div>
 		</footer>
 
@@ -605,56 +680,192 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-text);
 			}
 
-			/* Logo Styles */
+			/* Logo Styles - Section améliorée */
 			.logo-examples {
 				display: flex;
 				flex-direction: column;
-				gap: var(--spacing-xl);
+				gap: var(--spacing-2xl);
 			}
 
 			.logo-size-demo,
+			.logo-variants-demo,
+			.logo-animations-demo,
+			.logo-context-demo,
 			.logo-code {
 				background: var(--color-surface);
 				padding: var(--spacing-xl);
+				border-radius: var(--border-radius-lg);
+				box-shadow: var(--shadow-sm);
 			}
 
 			.logo-size-demo h3,
+			.logo-variants-demo h3,
+			.logo-animations-demo h3,
+			.logo-context-demo h3,
 			.logo-code h3 {
 				margin-bottom: var(--spacing-lg);
 				font-size: var(--font-size-lg);
 				color: var(--color-text);
 			}
 
-			.logo-sizes {
+			.logo-sizes,
+			.variants-grid,
+			.animations-grid {
 				display: grid;
-				grid-template-columns: repeat(3, 1fr);
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 				gap: var(--spacing-xl);
 				align-items: center;
 			}
 
-			.logo-item {
+			.logo-item,
+			.variant-item,
+			.animation-item {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				gap: var(--spacing-sm);
 				text-align: center;
+				padding: var(--spacing-md);
+				border-radius: var(--border-radius-md);
+				transition: transform 0.2s ease;
 			}
 
-			.logo-label {
+			.logo-item:hover,
+			.variant-item:hover,
+			.animation-item:hover {
+				transform: translateY(-2px);
+				box-shadow: var(--shadow-md);
+			}
+
+			.variant-item.dark-background {
+				background: #333;
+				color: white;
+			}
+
+			.logo-label,
+			.variant-label,
+			.animation-label {
 				font-size: var(--font-size-sm);
 				font-weight: 500;
 				color: var(--color-text);
 			}
 
+			.dark-background .variant-label {
+				color: white;
+			}
+
 			.logo-item code,
+			.variant-item code,
+			.animation-item code,
 			.code-block code {
 				font-family: var(--font-family-mono);
 				font-size: var(--font-size-xs);
 				color: var(--color-text-light);
 				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs);
+				border-radius: var(--border-radius-sm);
 			}
 
+			.dark-background code {
+				background: rgba(255, 255, 255, 0.2);
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			/* Classes personnalisées pour les animations */
+			:global(.custom-hover-effect) {
+				transition: all 0.3s ease;
+			}
+
+			:global(.custom-hover-effect:hover) {
+				transform: scale(1.1) rotate(2deg);
+				filter: brightness(1.1);
+			}
+
+			:global(.custom-shadow-effect) {
+				filter: drop-shadow(0 4px 12px rgba(22, 105, 182, 0.3));
+			}
+
+			/* Context demo styles */
+			.context-example {
+				margin: var(--spacing-lg) 0;
+				padding: var(--spacing-md);
+				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-md);
+				background: rgba(255, 255, 255, 0.3);
+			}
+
+			.context-example h4 {
+				margin-bottom: var(--spacing-sm);
+				color: var(--color-text);
+				font-size: var(--font-size-base);
+			}
+
+			.demo-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: var(--spacing-md);
+				background: white;
+				border-radius: var(--border-radius-md);
+				box-shadow: var(--shadow-sm);
+			}
+
+			.demo-nav {
+				display: flex;
+				gap: var(--spacing-md);
+			}
+
+			.demo-nav a {
+				text-decoration: none;
+				color: var(--color-text);
+				font-weight: 500;
+				transition: color 0.2s ease;
+			}
+
+			.demo-nav a:hover {
+				color: var(--color-tertiary);
+			}
+
+			.demo-footer {
+				background: #333;
+				border-radius: var(--border-radius-md);
+				overflow: hidden;
+			}
+
+			.demo-footer .footer-content {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: var(--spacing-lg);
+				color: white;
+			}
+
+			.demo-card {
+				background: white;
+				padding: var(--spacing-lg);
+				border-radius: var(--border-radius-md);
+				box-shadow: var(--shadow-md);
+				text-align: center;
+				max-width: 320px;
+				margin: 0 auto;
+				transition: transform 0.2s ease;
+			}
+
+			.demo-card:hover {
+				transform: translateY(-2px);
+				box-shadow: var(--shadow-lg);
+			}
+
+			.demo-card h5 {
+				margin: var(--spacing-sm) 0;
+				color: var(--color-text);
+			}
+
+			.demo-card p {
+				color: var(--color-text-light);
+				margin-bottom: var(--spacing-md);
+				line-height: 1.6;
+			}
 
 			.code-examples {
 				display: grid;
@@ -665,6 +876,7 @@ import Logo from '../components/Logo.astro';
 				background: rgba(255, 255, 255, 0.3);
 				padding: var(--spacing-md);
 				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-md);
 			}
 
 			.code-block h4 {
@@ -681,6 +893,7 @@ import Logo from '../components/Logo.astro';
 				font-family: var(--font-family-mono);
 				font-size: var(--font-size-sm);
 				line-height: 1.5;
+				border-radius: var(--border-radius-sm);
 			}
 
 			.props-list {
@@ -699,16 +912,6 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-tertiary);
 			}
 
-			/* Style personnalisé pour demo */
-			:global(.custom-logo) {
-				transition: transform 0.3s ease, filter 0.3s ease;
-			}
-
-			:global(.custom-logo:hover) {
-				transform: scale(1.1) rotate(5deg);
-				filter: hue-rotate(45deg);
-			}
-
 			/* Colors */
 			.color-grid {
 				display: grid;
@@ -721,12 +924,14 @@ import Logo from '../components/Logo.astro';
 				padding: var(--spacing-md);
 				box-shadow: var(--shadow-sm);
 				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-md);
 			}
 
 			.color-sample {
 				height: 80px;
 				margin-bottom: var(--spacing-sm);
 				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-sm);
 			}
 
 			.color-background { background-color: var(--color-background); }
@@ -753,6 +958,7 @@ import Logo from '../components/Logo.astro';
 				margin-bottom: var(--spacing-xs);
 				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs);
+				border-radius: var(--border-radius-sm);
 			}
 
 			.color-value {
@@ -783,6 +989,7 @@ import Logo from '../components/Logo.astro';
 				padding: var(--spacing-md);
 				background: var(--color-surface);
 				box-shadow: var(--shadow-sm);
+				border-radius: var(--border-radius-md);
 			}
 
 			.type-sample > *:first-child {
@@ -797,10 +1004,10 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-text-light);
 				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs) var(--spacing-sm);
+				border-radius: var(--border-radius-sm);
 			}
 
 			/* Component Styles */
-
 			.component-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -812,6 +1019,7 @@ import Logo from '../components/Logo.astro';
 				padding: var(--spacing-lg);
 				box-shadow: var(--shadow-sm);
 				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-md);
 			}
 
 			.component-example h3 {
@@ -821,7 +1029,6 @@ import Logo from '../components/Logo.astro';
 			}
 
 			/* Buttons */
-
 			@media (pointer: fine) {
 				.td-btn {
 					transform-style: preserve-3d;
@@ -838,6 +1045,7 @@ import Logo from '../components/Logo.astro';
 					transform: translateZ(-0.1rem);
 					border: 0.1rem solid var(--btn-bordercolor);
 					transition: 250ms ease;
+					border-radius: inherit;
 				}
 				
 				.td-btn:hover::before, .td-btn:focus::before {
@@ -856,7 +1064,6 @@ import Logo from '../components/Logo.astro';
 				--btn-padding: 1rem 1.5rem;
 				--btn-color: #fff;
 				--btn-bgcolor: #222222;
-				--btn-bgcolor: #222222;
 				--btn-bordercolor: #222222;
 				--btn-offset-bordercolor: #222222;
 				--btn-offset-bgcolor: transparent;
@@ -873,6 +1080,8 @@ import Logo from '../components/Logo.astro';
 				font-size: var(--font-size-base);
 				line-height: 1;
 				cursor: pointer;
+				border-radius: var(--border-radius-sm);
+				transition: all 0.2s ease;
 			}
 
 			.td-btn:disabled {
@@ -887,7 +1096,7 @@ import Logo from '../components/Logo.astro';
 			.td-btn-max {
 				--btn-padding: 1.5rem 2.5rem;
 				padding: var(--btn-padding);
-				font-size: var(--font-size-sm);
+				font-size: var(--font-size-lg);
 				text-transform: uppercase;
 				letter-spacing: 0.05em;
 			}
@@ -968,14 +1177,14 @@ import Logo from '../components/Logo.astro';
 			}
 
 			.td-btn-small  {
-				--btn-padding: 1rem 1.5rem;
+				--btn-padding: 0.75rem 1rem;
 				font-size: var(--font-size-sm);
 				padding: var(--btn-padding);
 			}
 
 			.td-button-group {
 				display: flex;
-				gap: var(--spacing-2xl);
+				gap: var(--spacing-md);
 				margin: var(--spacing-md) 0;
 				flex-wrap: wrap;
 			}
@@ -984,7 +1193,7 @@ import Logo from '../components/Logo.astro';
 				width: 100%;
 				font-size: var(--font-size-lg);
 				color: var(--color-text);
-				margin-bottom: calc(var(--spacing-lg) * -1);
+				margin-bottom: var(--spacing-sm);
 			}
 
 			/* Forms */
@@ -996,6 +1205,7 @@ import Logo from '../components/Logo.astro';
 				padding: var(--spacing-xl);
 				box-shadow: var(--shadow-sm);
 				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-md);
 			}
 
 			.form-group {
@@ -1016,6 +1226,7 @@ import Logo from '../components/Logo.astro';
 			select {
 				padding: var(--spacing-sm);
 				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-sm);
 				font-size: var(--font-size-base);
 				transition: border-color 0.2s ease, box-shadow 0.2s ease;
 				background-color: rgba(255, 255, 255, 0.8);
@@ -1054,6 +1265,7 @@ import Logo from '../components/Logo.astro';
 				position: relative;
 				background-color: rgba(255, 255, 255, 0.8);
 				transition: all 0.2s ease;
+				border-radius: var(--border-radius-sm);
 			}
 
 			.radiomark {
@@ -1110,6 +1322,7 @@ import Logo from '../components/Logo.astro';
 				box-shadow: var(--shadow-sm);
 				overflow: hidden;
 				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-md);
 				transition: all 0.2s ease;
 			}
 
@@ -1125,6 +1338,12 @@ import Logo from '../components/Logo.astro';
 			.card-elevated:hover {
 				box-shadow: var(--shadow-lg);
 				transform: translateY(-4px);
+			}
+
+			.card-with-logo .card-header {
+				display: flex;
+				align-items: center;
+				gap: var(--spacing-sm);
 			}
 
 			.card-header {
@@ -1161,6 +1380,7 @@ import Logo from '../components/Logo.astro';
 				padding: var(--spacing-xl);
 				box-shadow: var(--shadow-sm);
 				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-md);
 			}
 
 			.spacing-examples h3 {
@@ -1192,6 +1412,7 @@ import Logo from '../components/Logo.astro';
 				font-weight: 500;
 				min-height: 50px;
 				width: 100%;
+				border-radius: var(--border-radius-sm);
 			}
 
 			.spacing-xs { padding: var(--spacing-xs); }
@@ -1207,6 +1428,7 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-text-light);
 				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs);
+				border-radius: var(--border-radius-sm);
 			}
 
 			/* Grid System */
@@ -1221,6 +1443,7 @@ import Logo from '../components/Logo.astro';
 				padding: var(--spacing-lg);
 				box-shadow: var(--shadow-sm);
 				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-md);
 			}
 
 			.grid-example-item h3 {
@@ -1246,6 +1469,7 @@ import Logo from '../components/Logo.astro';
 				text-align: center;
 				font-weight: 500;
 				transition: transform 0.2s ease;
+				border-radius: var(--border-radius-sm);
 			}
 
 			.grid-item:hover {
@@ -1264,6 +1488,7 @@ import Logo from '../components/Logo.astro';
 				padding: var(--spacing-lg);
 				text-align: center;
 				border: 1px solid var(--color-border);
+				border-radius: var(--border-radius-md);
 				transition: all 0.2s ease;
 			}
 
@@ -1282,6 +1507,7 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-text-light);
 				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs);
+				border-radius: var(--border-radius-sm);
 			}
 
 			.shadow-sm { box-shadow: var(--shadow-sm); }
@@ -1293,12 +1519,23 @@ import Logo from '../components/Logo.astro';
 				margin-top: var(--spacing-2xl);
 				padding: var(--spacing-2xl);
 				background: var(--color-surface);
+				border-radius: var(--border-radius-lg);
+				box-shadow: var(--shadow-md);
+			}
+
+			.td-footer .td-container {
+				display: flex;
+				align-items: flex-start;
+				gap: var(--spacing-lg);
+			}
+
+			.footer-info {
+				flex: 1;
 			}
 
 			.td-footer p {
 				margin: 0;
 				color: var(--color-text);
-				font-weight: 500;
 			}
 
 			.footer-note {
@@ -1307,6 +1544,7 @@ import Logo from '../components/Logo.astro';
 				font-style: italic;
 				max-width: 600px;
 				font-weight: normal !important;
+				margin-top: var(--spacing-xs) !important;
 			}
 
 			/* Responsive */
@@ -1327,13 +1565,11 @@ import Logo from '../components/Logo.astro';
 					gap: var(--spacing-sm);
 				}
 
-				.logo-sizes {
+				.logo-sizes,
+				.variants-grid,
+				.animations-grid {
 					grid-template-columns: 1fr;
 					gap: var(--spacing-lg);
-				}
-
-				.usage-examples {
-					grid-template-columns: 1fr;
 				}
 
 				.color-grid {
@@ -1354,14 +1590,26 @@ import Logo from '../components/Logo.astro';
 					grid-template-columns: 1fr;
 				}
 
-				.nav-example {
+				.demo-header {
 					flex-direction: column;
-					align-items: flex-start;
+					gap: var(--spacing-sm);
+					text-align: center;
+				}
+
+				.demo-footer .footer-content {
+					flex-direction: column;
+					text-align: center;
 					gap: var(--spacing-sm);
 				}
 
-				.nav-example nav {
-					margin-left: 0;
+				.td-footer .td-container {
+					flex-direction: column;
+					text-align: center;
+				}
+
+				.td-button-group {
+					flex-direction: column;
+					gap: var(--spacing-sm);
 				}
 			}
 
@@ -1370,7 +1618,7 @@ import Logo from '../components/Logo.astro';
 					padding: var(--spacing-sm);
 				}
 
-				.header h1 {
+				.td-header h1 {
 					font-size: var(--font-size-2xl);
 				}
 
@@ -1378,12 +1626,16 @@ import Logo from '../components/Logo.astro';
 					font-size: var(--font-size-xl);
 				}
 
-				.button-group {
-					flex-direction: column;
+				.logo-examples {
+					gap: var(--spacing-lg);
 				}
 
-				.btn {
-					width: 100%;
+				.logo-size-demo,
+				.logo-variants-demo,
+				.logo-animations-demo,
+				.logo-context-demo,
+				.logo-code {
+					padding: var(--spacing-md);
 				}
 			}
 		</style>
