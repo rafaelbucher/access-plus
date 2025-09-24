@@ -4,6 +4,7 @@ import Logo from '../components/Logo.astro';
 ---
 
 <html lang="fr">
+
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -11,13 +12,15 @@ import Logo from '../components/Logo.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>Design System - Astro</title>
 	</head>
-	<body>
-		<div class="container">
-			<header class="header">
-				<h1>Design System</h1>
-				<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
-			</header>
 
+	<body>
+		
+		<header class="header">
+			<h1>Design System</h1>
+			<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
+		</header>
+
+		<main class="main">
 			<!-- Logo -->
 			<section class="section">
 				<h2>Logo</h2>
@@ -49,38 +52,6 @@ import Logo from '../components/Logo.astro';
 								<Logo size="xl" />
 								<span class="logo-label">XL - 256px</span>
 								<code>size="xl"</code>
-							</div>
-						</div>
-					</div>
-
-					<div class="logo-usage">
-						<h3>Exemples d'utilisation</h3>
-						<div class="usage-examples">
-							<div class="usage-example">
-								<h4>Dans une navigation</h4>
-								<div class="nav-example">
-									<Logo size="xs" />
-									<span>MonSite</span>
-									<nav>
-										<a href="#">Accueil</a>
-										<a href="#">Produits</a>
-										<a href="#">Contact</a>
-									</nav>
-								</div>
-							</div>
-							<div class="usage-example">
-								<h4>En page d'accueil</h4>
-								<div class="hero-example">
-									<Logo size="lg" />
-									<p>Logo principal en grande taille</p>
-								</div>
-							</div>
-							<div class="usage-example">
-								<h4>Avec classes personnalisées</h4>
-								<div class="custom-example">
-									<Logo size="md" class="custom-logo" />
-									<p>Logo avec animations personnalisées</p>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -231,6 +202,75 @@ import Logo from '../components/Logo.astro';
 			<!-- Buttons -->
 			<section class="section">
 				<h2>Boutons</h2>
+
+				<div class="component-example">
+					<div class="td-button-group">
+						<h3>Primary Buttons</h3>
+						<button class="td-btn td-btn-primary">Button primary</button>
+						<button class="td-btn td-btn-primary" disabled>Button primary disabled</button>
+					</div>
+					<div class="td-button-group">
+						<h3>Secondary Buttons</h3>
+						<button class="td-btn td-btn-secondary">Button secondary</button>
+						<button class="td-btn td-btn-secondary" disabled>Button secondary disabled</button>
+					</div>
+					<div class="td-button-group">
+						<h3>Tertiary Buttons</h3>
+						<button class="td-btn td-btn-tertiary">Button tertiary</button>
+						<button class="td-btn td-btn-tertiary td-btn-outline">Button tertiary outline</button>
+						<button class="td-btn td-btn-tertiary" disabled>Button tertiary disabled</button>
+					</div>
+					<div class="td-button-group">
+						<h3>hightlight Buttons</h3>
+						<button class="td-btn td-btn-highlight">Button tertiary</button>
+						<button class="td-btn td-btn-highlight td-btn-outline">Button hightlightmax outline</button>
+						<button class="td-btn td-btn-highlight" disabled>Button hightlightmax disabled</button>
+					</div>
+					<div class="td-button-group">
+						<h3>Success Buttons</h3>
+						<button class="td-btn td-btn-success">Button success</button>
+						<button class="td-btn td-btn-success td-btn-outline">Button success outline</button>
+						<button class="td-btn td-btn-success" disabled>Button success disabled</button>
+					</div>
+					<div class="td-button-group">
+						<h3>Warning Buttons</h3>
+						<button class="td-btn td-btn-warning">Button warning</button>
+						<button class="td-btn td-btn-warning td-btn-outline">Button warning outline</button>
+						<button class="td-btn td-btn-warning" disabled>Button warning disabled</button>
+					</div>
+					<div class="td-button-group">
+						<h3>Danger Buttons</h3>
+						<button class="td-btn td-btn-danger">Button danger</button>
+						<button class="td-btn td-btn-danger td-btn-outline">Button danger disabled</button>
+						<button class="td-btn td-btn-danger" disabled>Button danger disabled</button>
+					</div>
+					
+					<div class="td-button-group">
+						<h3>Highlight Buttons</h3>
+						<button class="td-btn td-btn-max td-btn-primary">Button primary</button>
+						<button class="td-btn td-btn-max td-btn-primary" disabled>Button primary disabled</button>
+						<button class="td-btn td-btn-max td-btn-secondary">Button secondary</button>
+						<button class="td-btn td-btn-max td-btn-tertiary">Button tertiary</button>
+						<button class="td-btn td-btn-max td-btn-highlight">Button highlight</button>
+						<button class="td-btn td-btn-max td-btn-success" disabled>Button success</button>
+						<button class="td-btn td-btn-max td-btn-warning" disabled>Button warning</button>
+						<button class="td-btn td-btn-max td-btn-danger" disabled>Button danger</button>
+					</div>
+					
+					<div class="td-button-group">
+						<h3>Min Buttons</h3>
+						<button class="td-btn td-btn-small td-btn-primary">Button primary</button>
+						<button class="td-btn td-btn-small td-btn-primary" disabled>Button primary disabled</button>
+						<button class="td-btn td-btn-small td-btn-secondary">Button secondary</button>
+						<button class="td-btn td-btn-small td-btn-tertiary">Button tertiary</button>
+						<button class="td-btn td-btn-small td-btn-success">Button success</button>
+						<button class="td-btn td-btn-small td-btn-warning">Button warning</button>
+						<button class="td-btn td-btn-small td-btn-danger">Button danger</button>
+					</div>
+
+				</div>
+
+				<!--
 				<div class="component-grid">
 					<div class="component-example">
 						<h3>Primary</h3>
@@ -275,6 +315,7 @@ import Logo from '../components/Logo.astro';
 						</div>
 					</div>
 				</div>
+				 -->
 			</section>
 
 			<!-- Form Elements -->
@@ -335,7 +376,7 @@ import Logo from '../components/Logo.astro';
 							<p>Contenu de la carte avec du texte et des informations importantes.</p>
 						</div>
 						<div class="card-footer">
-							<button class="btn btn-primary btn-small">Action</button>
+							<button class="td-btn td-btn-small td-btn-primary">Action</button>
 						</div>
 					</div>
 					<div class="card card-elevated">
@@ -444,21 +485,22 @@ import Logo from '../components/Logo.astro';
 				</div>
 			</section>
 
-			<!-- Footer -->
-			<footer class="design-system-footer">
-				<div class="footer-content">
-					<Logo size="xs" />
-					<p>Design System - Version 1.0</p>
-					<p class="footer-note">Tous les composants utilisent le nouveau schéma de couleurs avec le fond #FFE9D6 et la typographie #222222</p>
-				</div>
-			</footer>
-		</div>
+		</main>
+
+		<!-- Footer -->
+		<footer class="td-footer">
+			<div class="td-container">
+				<Logo size="xs" />
+				<p>Design System - Version 1.0</p>
+				<p class="footer-note">Tous les composants utilisent le nouveau schéma de couleurs avec le fond #FFE9D6 et la typographie #222222</p>
+		 	</div>
+		</footer>
 
 		<style>
 			/* CSS Variables */
 			:root {
 				--color-primary: #222222;
-				--color-secondary: #FFE9D6;
+				--color-secondary: #faf5dd;
 				--color-tertiary: #1669B6;
 				--color-highlight: #FF5C33;
 				--color-success: #10b981;
@@ -466,7 +508,7 @@ import Logo from '../components/Logo.astro';
 				--color-danger: #ef4444;
 
 				/* Nouvelles couleurs principales */
-				--color-background: #FFE9D6;
+				--color-background: #faf5dd;
 				--color-text: #222222;
 				--color-text-light: #444444;
 				--color-surface: rgba(255, 255, 255, 0.8);
@@ -525,7 +567,7 @@ import Logo from '../components/Logo.astro';
 			}
 
 			/* Layout */
-			.container {
+			.main {
 				max-width: 1200px;
 				margin: 0 auto;
 				padding: var(--spacing-xl);
@@ -548,9 +590,7 @@ import Logo from '../components/Logo.astro';
 
 			.section h2 {
 				font-size: var(--font-size-2xl);
-				margin-bottom: var(--spacing-lg);
-				padding-bottom: var(--spacing-sm);
-				border-bottom: 2px solid var(--color-border);
+				margin-bottom: var(--spacing-xl);
 				color: var(--color-text);
 			}
 
@@ -558,21 +598,16 @@ import Logo from '../components/Logo.astro';
 			.logo-examples {
 				display: flex;
 				flex-direction: column;
-				gap: var(--spacing-2xl);
+				gap: var(--spacing-xl);
 			}
 
 			.logo-size-demo,
-			.logo-usage,
 			.logo-code {
 				background: var(--color-surface);
 				padding: var(--spacing-xl);
-				border-radius: var(--border-radius-lg);
-				box-shadow: var(--shadow-sm);
-				border: 1px solid var(--color-border);
 			}
 
 			.logo-size-demo h3,
-			.logo-usage h3,
 			.logo-code h3 {
 				margin-bottom: var(--spacing-lg);
 				font-size: var(--font-size-lg);
@@ -581,7 +616,7 @@ import Logo from '../components/Logo.astro';
 
 			.logo-sizes {
 				display: grid;
-				grid-template-columns: repeat(2, 1fr);
+				grid-template-columns: repeat(3, 1fr);
 				gap: var(--spacing-xl);
 				align-items: center;
 			}
@@ -607,80 +642,8 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-text-light);
 				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs);
-				border-radius: var(--border-radius-sm);
 			}
 
-			.usage-examples {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				gap: var(--spacing-lg);
-			}
-
-			.usage-example {
-				border: 1px solid var(--color-border);
-				border-radius: var(--border-radius-md);
-				overflow: hidden;
-				background: var(--color-surface);
-			}
-
-			.usage-example h4 {
-				margin: 0;
-				padding: var(--spacing-md);
-				background: rgba(255, 255, 255, 0.3);
-				font-size: var(--font-size-base);
-				border-bottom: 1px solid var(--color-border);
-				color: var(--color-text);
-			}
-
-			.nav-example {
-				display: flex;
-				align-items: center;
-				gap: var(--spacing-lg);
-				padding: var(--spacing-md);
-				background: var(--color-surface);
-			}
-
-			.nav-example span {
-				font-weight: 500;
-				color: var(--color-text);
-			}
-
-			.nav-example nav {
-				display: flex;
-				gap: var(--spacing-md);
-				margin-left: auto;
-			}
-
-			.nav-example nav a {
-				color: var(--color-text-light);
-				text-decoration: none;
-				font-size: var(--font-size-sm);
-				padding: var(--spacing-xs) var(--spacing-sm);
-				border-radius: var(--border-radius-sm);
-				transition: all 0.2s ease;
-			}
-
-			.nav-example nav a:hover {
-				background-color: rgba(255, 255, 255, 0.5);
-				color: var(--color-text);
-			}
-
-			.hero-example,
-			.custom-example {
-				padding: var(--spacing-lg);
-				background: var(--color-surface);
-				display: flex;
-				align-items: center;
-				gap: var(--spacing-md);
-				flex-direction: column;
-				text-align: center;
-			}
-
-			.hero-example p,
-			.custom-example p {
-				color: var(--color-text-light);
-				margin: 0;
-			}
 
 			.code-examples {
 				display: grid;
@@ -690,7 +653,6 @@ import Logo from '../components/Logo.astro';
 			.code-block {
 				background: rgba(255, 255, 255, 0.3);
 				padding: var(--spacing-md);
-				border-radius: var(--border-radius-md);
 				border: 1px solid var(--color-border);
 			}
 
@@ -704,7 +666,6 @@ import Logo from '../components/Logo.astro';
 				background: var(--color-text);
 				color: var(--color-background);
 				padding: var(--spacing-md);
-				border-radius: var(--border-radius-sm);
 				overflow-x: auto;
 				font-family: var(--font-family-mono);
 				font-size: var(--font-size-sm);
@@ -746,7 +707,6 @@ import Logo from '../components/Logo.astro';
 
 			.color-card {
 				background: var(--color-surface);
-				border-radius: var(--border-radius-md);
 				padding: var(--spacing-md);
 				box-shadow: var(--shadow-sm);
 				border: 1px solid var(--color-border);
@@ -754,7 +714,6 @@ import Logo from '../components/Logo.astro';
 
 			.color-sample {
 				height: 80px;
-				border-radius: var(--border-radius-sm);
 				margin-bottom: var(--spacing-sm);
 				border: 1px solid var(--color-border);
 			}
@@ -783,7 +742,6 @@ import Logo from '../components/Logo.astro';
 				margin-bottom: var(--spacing-xs);
 				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs);
-				border-radius: var(--border-radius-sm);
 			}
 
 			.color-value {
@@ -813,9 +771,7 @@ import Logo from '../components/Logo.astro';
 				gap: var(--spacing-lg);
 				padding: var(--spacing-md);
 				background: var(--color-surface);
-				border-radius: var(--border-radius-md);
 				box-shadow: var(--shadow-sm);
-				border: 1px solid var(--color-border);
 			}
 
 			.type-sample > *:first-child {
@@ -830,102 +786,9 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-text-light);
 				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs) var(--spacing-sm);
-				border-radius: var(--border-radius-sm);
 			}
 
-			/* Buttons */
-			.btn {
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				padding: var(--spacing-sm) var(--spacing-md);
-				border: 1px solid transparent;
-				border-radius: var(--border-radius-md);
-				font-size: var(--font-size-base);
-				font-weight: 500;
-				text-decoration: none;
-				cursor: pointer;
-				transition: all 0.2s ease;
-				gap: var(--spacing-xs);
-			}
-
-			.btn-small {
-				padding: var(--spacing-xs) var(--spacing-sm);
-				font-size: var(--font-size-sm);
-			}
-
-			.btn-primary {
-				background-color: var(--color-text);
-				color: var(--color-background);
-			}
-
-			.btn-primary:hover:not(:disabled) {
-				background-color: #000000;
-				transform: translateY(-1px);
-				box-shadow: var(--shadow-md);
-			}
-
-			.btn-secondary {
-				background-color: var(--color-surface);
-				color: var(--color-text);
-				border: 1px solid var(--color-text);
-			}
-
-			.btn-secondary:hover:not(:disabled) {
-				background-color: var(--color-surface-hover);
-				transform: translateY(-1px);
-				box-shadow: var(--shadow-md);
-			}
-
-			.btn-tertiary {
-				background-color: var(--color-tertiary);
-				color: white;
-			}
-
-			.btn-tertiary:hover:not(:disabled) {
-				background-color: #125A9A;
-				transform: translateY(-1px);
-				box-shadow: var(--shadow-md);
-			}
-
-			.btn-highlight {
-				background-color: var(--color-highlight);
-				color: white;
-			}
-
-			.btn-highlight:hover:not(:disabled) {
-				background-color: #E6421A;
-				transform: translateY(-1px);
-				box-shadow: var(--shadow-md);
-			}
-
-			.btn-outline {
-				background-color: transparent;
-				color: var(--color-text);
-				border-color: var(--color-text);
-			}
-
-			.btn-outline:hover:not(:disabled) {
-				background-color: var(--color-text);
-				color: var(--color-background);
-				transform: translateY(-1px);
-				box-shadow: var(--shadow-md);
-			}
-
-			.btn-ghost {
-				background-color: transparent;
-				color: var(--color-text-light);
-			}
-
-			.btn-ghost:hover:not(:disabled) {
-				background-color: rgba(255, 255, 255, 0.5);
-				color: var(--color-text);
-			}
-
-			.btn:disabled {
-				opacity: 0.6;
-				cursor: not-allowed;
-			}
+			/* Component Styles */
 
 			.component-grid {
 				display: grid;
@@ -936,7 +799,6 @@ import Logo from '../components/Logo.astro';
 			.component-example {
 				background: var(--color-surface);
 				padding: var(--spacing-lg);
-				border-radius: var(--border-radius-md);
 				box-shadow: var(--shadow-sm);
 				border: 1px solid var(--color-border);
 			}
@@ -947,10 +809,171 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-text);
 			}
 
-			.button-group {
+			/* Buttons */
+
+			@media (pointer: fine) {
+				.td-btn {
+					transform-style: preserve-3d;
+				}
+
+				.td-btn::before {
+					content: "";
+					position: absolute;
+					z-index: -10;
+					top: -0.1rem;
+					right: -0.1rem;
+					bottom: -0.1rem;
+					left: -0.1rem;
+					transform: translateZ(-0.1rem);
+					border: 0.1rem solid var(--btn-bordercolor);
+					transition: 250ms ease;
+				}
+				
+				.td-btn:hover::before, .td-btn:focus::before {
+					transform: translateZ(-0.1rem) translate(1rem, 1rem);
+				}
+
+				.td-btn-secondary:hover::before {
+					--btn-color: #222222;
+					--btn-bgcolor: transparent;
+					color: var(--btn-color);
+					background-color: var(--btn-bgcolor);
+				}
+			}
+
+			.td-btn {    
+				--btn-padding: 1rem 1.5rem;
+				--btn-color: #fff;
+				--btn-bgcolor: #222222;
+				--btn-bgcolor: #222222;
+				--btn-bordercolor: #222222;
+				--btn-offset-bordercolor: #222222;
+				--btn-offset-bgcolor: transparent;
+				position: relative;
+				z-index: 10;
+				display: inline-block;
+				padding: var(--btn-padding);
+				margin-bottom: 1em;
+				color: var(--btn-color);
+				border: 0.1rem solid var(--btn-bordercolor);
+				background-color: var(--btn-bgcolor);
+				text-align: center;
+				text-decoration: none;
+				font-size: var(--font-size-base);
+				line-height: 1;
+				cursor: pointer;
+			}
+
+			.td-btn:disabled {
+				opacity: 0.4;
+				cursor: not-allowed;
+			}
+
+			.td-btn:disabled::before {
+				display: none;
+			}
+
+			.td-btn-max {
+				--btn-padding: 1.5rem 2.5rem;
+				padding: var(--btn-padding);
+				font-size: var(--font-size-sm);
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
+			.td-btn-primary {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #222222;
+				--btn-bordercolor: #222222;
+				color: var(--btn-color);
+				border: 0.1rem solid var(--btn-bordercolor);
+				background-color: var(--btn-bgcolor);
+			}
+
+			.td-btn-secondary {
+				--btn-color: #222222;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #222222;
+			}
+
+			.td-btn-tertiary {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #1669B6;
+				--btn-bordercolor: #1669B6;
+			}
+
+			.td-btn-tertiary.td-btn-outline  {
+				--btn-color: #1669B6;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #1669B6;
+			}
+
+			.td-btn-highlight {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #FF5C33;
+				--btn-bordercolor: #FF5C33;
+			}
+
+			.td-btn-highlight.td-btn-outline {
+				--btn-color: #FF5C33;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #FF5C33;
+			}
+
+			.td-btn-success {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #10b981;
+				--btn-bordercolor: #10b981;
+			}
+
+			.td-btn-success.td-btn-outline  {
+				--btn-color: #10b981;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #10b981;
+			}
+
+			.td-btn-warning {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #f59e0b;
+				--btn-bordercolor: #f59e0b;
+			}
+
+			.td-btn-warning.td-btn-outline {
+				--btn-color: #f59e0b;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #f59e0b;
+			}
+
+			.td-btn-danger {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #ef4444;
+				--btn-bordercolor: #ef4444;
+			}
+
+			.td-btn-danger.td-btn-outline {
+				--btn-color: #ef4444;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #ef4444;
+			}
+
+			.td-btn-small  {
+				--btn-padding: 1rem 1.5rem;
+				font-size: var(--font-size-sm);
+				padding: var(--btn-padding);
+			}
+
+			.td-button-group {
 				display: flex;
-				gap: var(--spacing-sm);
+				gap: var(--spacing-2xl);
+				margin: var(--spacing-md) 0;
 				flex-wrap: wrap;
+			}
+
+			.td-button-group h3 {
+				width: 100%;
+				font-size: var(--font-size-lg);
+				color: var(--color-text);
+				margin-bottom: calc(var(--spacing-lg) * -1);
 			}
 
 			/* Forms */
@@ -960,7 +983,6 @@ import Logo from '../components/Logo.astro';
 				gap: var(--spacing-lg);
 				background: var(--color-surface);
 				padding: var(--spacing-xl);
-				border-radius: var(--border-radius-lg);
 				box-shadow: var(--shadow-sm);
 				border: 1px solid var(--color-border);
 			}
@@ -983,7 +1005,6 @@ import Logo from '../components/Logo.astro';
 			select {
 				padding: var(--spacing-sm);
 				border: 1px solid var(--color-border);
-				border-radius: var(--border-radius-md);
 				font-size: var(--font-size-base);
 				transition: border-color 0.2s ease, box-shadow 0.2s ease;
 				background-color: rgba(255, 255, 255, 0.8);
@@ -1018,7 +1039,6 @@ import Logo from '../components/Logo.astro';
 				width: 18px;
 				height: 18px;
 				border: 2px solid var(--color-border);
-				border-radius: var(--border-radius-sm);
 				display: inline-block;
 				position: relative;
 				background-color: rgba(255, 255, 255, 0.8);
@@ -1076,7 +1096,6 @@ import Logo from '../components/Logo.astro';
 
 			.card {
 				background: var(--color-surface);
-				border-radius: var(--border-radius-lg);
 				box-shadow: var(--shadow-sm);
 				overflow: hidden;
 				border: 1px solid var(--color-border);
@@ -1129,7 +1148,6 @@ import Logo from '../components/Logo.astro';
 			.spacing-examples {
 				background: var(--color-surface);
 				padding: var(--spacing-xl);
-				border-radius: var(--border-radius-lg);
 				box-shadow: var(--shadow-sm);
 				border: 1px solid var(--color-border);
 			}
@@ -1159,7 +1177,6 @@ import Logo from '../components/Logo.astro';
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				border-radius: var(--border-radius-sm);
 				font-size: var(--font-size-sm);
 				font-weight: 500;
 				min-height: 50px;
@@ -1179,7 +1196,6 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-text-light);
 				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs);
-				border-radius: var(--border-radius-sm);
 			}
 
 			/* Grid System */
@@ -1192,7 +1208,6 @@ import Logo from '../components/Logo.astro';
 			.grid-example-item {
 				background: var(--color-surface);
 				padding: var(--spacing-lg);
-				border-radius: var(--border-radius-md);
 				box-shadow: var(--shadow-sm);
 				border: 1px solid var(--color-border);
 			}
@@ -1218,7 +1233,6 @@ import Logo from '../components/Logo.astro';
 				color: white;
 				padding: var(--spacing-md);
 				text-align: center;
-				border-radius: var(--border-radius-sm);
 				font-weight: 500;
 				transition: transform 0.2s ease;
 			}
@@ -1237,7 +1251,6 @@ import Logo from '../components/Logo.astro';
 			.shadow-card {
 				background: var(--color-surface);
 				padding: var(--spacing-lg);
-				border-radius: var(--border-radius-md);
 				text-align: center;
 				border: 1px solid var(--color-border);
 				transition: all 0.2s ease;
@@ -1258,7 +1271,6 @@ import Logo from '../components/Logo.astro';
 				color: var(--color-text-light);
 				background: rgba(255, 255, 255, 0.5);
 				padding: var(--spacing-xs);
-				border-radius: var(--border-radius-sm);
 			}
 
 			.shadow-sm { box-shadow: var(--shadow-sm); }
@@ -1266,17 +1278,13 @@ import Logo from '../components/Logo.astro';
 			.shadow-lg { box-shadow: var(--shadow-lg); }
 
 			/* Footer */
-			.design-system-footer {
+			.td-footer {
 				margin-top: var(--spacing-2xl);
 				padding: var(--spacing-2xl);
-				border-top: 2px solid var(--color-border);
 				background: var(--color-surface);
-				border-radius: var(--border-radius-lg);
-				box-shadow: var(--shadow-sm);
-				border: 1px solid var(--color-border);
 			}
 
-			.design-system-footer .footer-content {
+			.td-footer .td-container {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -1284,7 +1292,7 @@ import Logo from '../components/Logo.astro';
 				text-align: center;
 			}
 
-			.design-system-footer p {
+			.td-footer p {
 				margin: 0;
 				color: var(--color-text);
 				font-weight: 500;
