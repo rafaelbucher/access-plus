@@ -15,14 +15,19 @@ import Logo from '../components/Logo.astro';
 
 	<body>
 		
-		<header class="header">
-			<h1>Design System</h1>
-			<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
+		<header class="td-header">
+			<div class="td-container">
+				<Logo size="xl" />
+			</div>
 		</header>
 
 		<main class="main">
+			<section class="td-section">
+				<h1>Design System</h1>
+				<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
+			</section>
 			<!-- Logo -->
-			<section class="section">
+			<section class="td-section">
 				<h2>Logo</h2>
 				<div class="logo-examples">
 					<div class="logo-size-demo">
@@ -84,7 +89,7 @@ import Logo from '../components/Logo.astro';
 			</section>
 
 			<!-- Colors -->
-			<section class="section">
+			<section class="td-section">
 				<h2>Couleurs</h2>
 				<div class="color-grid">
 					<div class="color-card">
@@ -169,7 +174,7 @@ import Logo from '../components/Logo.astro';
 			</section>
 
 			<!-- Typography -->
-			<section class="section">
+			<section class="td-section">
 				<h2>Typographie</h2>
 				<div class="typography-samples">
 					<div class="type-sample">
@@ -200,7 +205,7 @@ import Logo from '../components/Logo.astro';
 			</section>
 
 			<!-- Buttons -->
-			<section class="section">
+			<section class="td-section">
 				<h2>Boutons</h2>
 
 				<div class="component-example">
@@ -319,7 +324,7 @@ import Logo from '../components/Logo.astro';
 			</section>
 
 			<!-- Form Elements -->
-			<section class="section">
+			<section class="td-section">
 				<h2>Éléments de formulaire</h2>
 				<div class="form-examples">
 					<div class="form-group">
@@ -365,7 +370,7 @@ import Logo from '../components/Logo.astro';
 			</section>
 
 			<!-- Cards -->
-			<section class="section">
+			<section class="td-section">
 				<h2>Cartes</h2>
 				<div class="card-examples">
 					<div class="card">
@@ -391,7 +396,7 @@ import Logo from '../components/Logo.astro';
 			</section>
 
 			<!-- Spacing -->
-			<section class="section">
+			<section class="td-section">
 				<h2>Espacement</h2>
 				<div class="spacing-examples">
 					<div class="spacing-demo">
@@ -427,7 +432,7 @@ import Logo from '../components/Logo.astro';
 			</section>
 
 			<!-- Grid System -->
-			<section class="section">
+			<section class="td-section">
 				<h2>Système de grille</h2>
 				<div class="grid-examples">
 					<div class="grid-example-item">
@@ -467,7 +472,7 @@ import Logo from '../components/Logo.astro';
 			</section>
 
 			<!-- Shadows & Effects -->
-			<section class="section">
+			<section class="td-section">
 				<h2>Ombres et effets</h2>
 				<div class="shadow-examples">
 					<div class="shadow-card shadow-sm">
@@ -573,8 +578,14 @@ import Logo from '../components/Logo.astro';
 				padding: var(--spacing-xl);
 			}
 
-			.header {
-				text-align: center;
+			.td-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: var(--spacing-lg);
+			}
+
+			.td-header {
+				text-align: left;
 				margin-bottom: var(--spacing-2xl);
 			}
 
@@ -584,11 +595,11 @@ import Logo from '../components/Logo.astro';
 				margin-top: var(--spacing-sm);
 			}
 
-			.section {
-				margin-bottom: var(--spacing-2xl);
+			.td-section {
+				margin: var(--spacing-xl) 0 var(--spacing-2xl) 0;
 			}
 
-			.section h2 {
+			.td-section h2 {
 				font-size: var(--font-size-2xl);
 				margin-bottom: var(--spacing-xl);
 				color: var(--color-text);
@@ -1284,14 +1295,6 @@ import Logo from '../components/Logo.astro';
 				background: var(--color-surface);
 			}
 
-			.td-footer .td-container {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: var(--spacing-md);
-				text-align: center;
-			}
-
 			.td-footer p {
 				margin: 0;
 				color: var(--color-text);
@@ -1308,7 +1311,7 @@ import Logo from '../components/Logo.astro';
 
 			/* Responsive */
 			@media (max-width: 768px) {
-				.container {
+				.main {
 					padding: var(--spacing-md);
 				}
 
@@ -1363,7 +1366,7 @@ import Logo from '../components/Logo.astro';
 			}
 
 			@media (max-width: 480px) {
-				.container {
+				.main {
 					padding: var(--spacing-sm);
 				}
 
@@ -1371,7 +1374,7 @@ import Logo from '../components/Logo.astro';
 					font-size: var(--font-size-2xl);
 				}
 
-				.section h2 {
+				.td-section h2 {
 					font-size: var(--font-size-xl);
 				}
 
