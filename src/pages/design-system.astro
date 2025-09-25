@@ -28,7 +28,7 @@ import Logo from '../components/Logo.astro';
 				<div class="nav-content">
 					<header class="td-header">
 						<h1>
-							<Logo size="md" variant="dark" />
+							<Logo size="xl" variant="blue" />
 						</h1>
 						<h2 class="td-header-title">Design System</h2>
 						<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
@@ -59,29 +59,24 @@ import Logo from '../components/Logo.astro';
 							<h3>Tailles disponibles</h3>
 							<div class="logo-sizes">
 								<div class="logo-item">
-									<Logo size="xs" />
+									<Logo size="xs" variant="dark" />
 									<span class="logo-label">XS - 128px</span>
 									<code>size="xs"</code>
 								</div>
 								<div class="logo-item">
-									<Logo size="sm" />
+									<Logo size="sm" variant="dark" />
 									<span class="logo-label">SM - 160px</span>
 									<code>size="sm"</code>
 								</div>
 								<div class="logo-item">
-									<Logo size="md" />
+									<Logo size="md" variant="dark" />
 									<span class="logo-label">MD - 192px</span>
 									<code>size="md" (défaut)</code>
 								</div>
 								<div class="logo-item">
-									<Logo size="lg" />
+									<Logo size="lg" variant="dark" />
 									<span class="logo-label">LG - 224px</span>
 									<code>size="lg"</code>
-								</div>
-								<div class="logo-item">
-									<Logo size="xl" />
-									<span class="logo-label">XL - 256px</span>
-									<code>size="xl"</code>
 								</div>
 							</div>
 						</div>
@@ -91,14 +86,9 @@ import Logo from '../components/Logo.astro';
 							<h3>Variantes de couleur</h3>
 							<div class="variants-grid">
 								<div class="variant-item">
-									<Logo size="lg" variant="default" />
-									<span class="variant-label">Default</span>
-									<code>variant="default"</code>
-								</div>
-								<div class="variant-item dark-background">
-									<Logo size="lg" variant="light" />
-									<span class="variant-label">Light</span>
-									<code>variant="light"</code>
+									<Logo size="lg" variant="blue" />
+									<span class="variant-label">Blue</span>
+									<code>variant="blue"</code>
 								</div>
 								<div class="variant-item">
 									<Logo size="lg" variant="dark" />
@@ -106,14 +96,14 @@ import Logo from '../components/Logo.astro';
 									<code>variant="dark"</code>
 								</div>
 								<div class="variant-item">
-									<Logo size="lg" variant="blue" />
-									<span class="variant-label">Blue</span>
-									<code>variant="blue"</code>
-								</div>
-								<div class="variant-item">
 									<Logo size="lg" variant="orange" />
 									<span class="variant-label">Orange</span>
 									<code>variant="orange"</code>
+								</div>
+								<div class="variant-item dark-background">
+									<Logo size="lg" variant="light" />
+									<span class="variant-label">Light</span>
+									<code>variant="light"</code>
 								</div>
 							</div>
 						</div>
@@ -766,8 +756,8 @@ import Logo from '../components/Logo.astro';
 				--nav-width: 280px;
 				--nav-background: rgba(255, 255, 255, 0.95);
 				--nav-border: rgba(34, 34, 34, 0.08);
-				--nav-link-hover: rgba(22, 105, 182, 0.1);
-				--nav-link-active: var(--color-tertiary);
+				--nav-link-hover: var(--color-primary);
+				--nav-link-active: var(--color-primary);
 			}
 
 			/* Reset & Base Styles */
@@ -896,22 +886,20 @@ import Logo from '../components/Logo.astro';
 				text-decoration: none;
 				color: var(--color-text);
 				font-weight: 500;
-				border-radius: var(--border-radius-md);
 				transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 				position: relative;
 			}
 
 			.nav-link:hover {
-				background: var(--nav-link-hover);
 				color: var(--nav-link-active);
 				transform: translateX(8px);
 				padding-left: calc(var(--spacing-md) + 4px);
 			}
 
 			.nav-link.active {
-				background: var(--nav-link-hover);
 				color: var(--nav-link-active);
 				font-weight: 600;
+				padding-left: calc(var(--spacing-md) + 4px);
 				transform: translateX(4px);
 			}
 
@@ -919,13 +907,11 @@ import Logo from '../components/Logo.astro';
 				content: '';
 				position: absolute;
 				left: 0;
-				top: 50%;
-				transform: translateY(-50%);
-				width: 4px;
-				height: 70%;
+				top: 0;
+				height: px;
+				width: 6px;
+				border-radius: 50%;
 				background: var(--nav-link-active);
-				border-radius: 0 2px 2px 0;
-				animation: slideInLeft 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 			}
 
 			@keyframes slideInLeft {
@@ -981,7 +967,6 @@ import Logo from '../components/Logo.astro';
 			.td-header {
 				text-align: left;
 				margin-bottom: var(--spacing-2xl);
-				padding-left: var(--spacing-md);
 			}
 
 			.td-header-title {
@@ -1031,21 +1016,6 @@ import Logo from '../components/Logo.astro';
 				.nav-link {
 					overflow: hidden;
 					position: relative;
-				}
-
-				.nav-link::before {
-					content: '';
-					position: absolute;
-					top: 0;
-					left: -100%;
-					width: 100%;
-					height: 100%;
-					background: linear-gradient(90deg, transparent, rgba(22, 105, 182, 0.1), transparent);
-					transition: left 0.6s ease;
-				}
-
-				.nav-link:hover::before {
-					left: 100%;
 				}
 			}
 
@@ -2002,25 +1972,6 @@ import Logo from '../components/Logo.astro';
 			/* Scroll indicator for current section */
 			.nav-link {
 				position: relative;
-			}
-
-			.nav-link::after {
-				content: '';
-				position: absolute;
-				right: var(--spacing-md);
-				top: 50%;
-				transform: translateY(-50%);
-				width: 0;
-				height: 0;
-				border-left: 4px solid var(--nav-link-active);
-				border-top: 3px solid transparent;
-				border-bottom: 3px solid transparent;
-				opacity: 0;
-				transition: all 0.2s ease;
-			}
-
-			.nav-link.active::after {
-				opacity: 1;
 			}
 
 			/* Improved focus states for accessibility */
