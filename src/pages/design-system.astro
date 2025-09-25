@@ -14,567 +14,708 @@ import Logo from '../components/Logo.astro';
 	</head>
 
 	<body>
-		
-		<header class="td-header">
-			<div class="td-container">
-				<Logo size="xl" variant="default" />
-			</div>
+		<header class="td-header td-header-full">
+			<h1>
+				<Logo size="md" variant="dark" />
+			</h1>
 		</header>
+		<!-- Navigation latérale -->
+		<nav class="sidebar-nav" id="sidebar-nav">
+			<div class="nav-toggle" id="nav-toggle">
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+				<span class="hamburger"></span>
+			</div>
+			<div class="nav-content">
+				<ul class="nav-list">
+					<li><a href="#logo" class="nav-link">Logo</a></li>
+					<li><a href="#couleurs" class="nav-link">Couleurs</a></li>
+					<li><a href="#typographie" class="nav-link">Typographie</a></li>
+					<li><a href="#boutons" class="nav-link">Boutons</a></li>
+					<li><a href="#formulaires" class="nav-link">Éléments de formulaire</a></li>
+					<li><a href="#cartes" class="nav-link">Cartes</a></li>
+					<li><a href="#espacement" class="nav-link">Espacement</a></li>
+					<li><a href="#grille" class="nav-link">Système de grille</a></li>
+					<li><a href="#ombres" class="nav-link">Ombres et effets</a></li>
+				</ul>
+			</div>
+		</nav>
 
-		<main class="main">
-			<section class="td-section">
-				<h1>Design System</h1>
-				<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
-			</section>
+		<!-- Overlay pour mobile -->
+		<div class="nav-overlay" id="nav-overlay"></div>
 
-			<!-- Logo Section Améliorée -->
-			<section class="td-section">
-				<h2>Logo</h2>
-				<div class="logo-examples">
-					<div class="logo-size-demo">
-						<h3>Tailles disponibles</h3>
-						<div class="logo-sizes">
-							<div class="logo-item">
-								<Logo size="xs" />
-								<span class="logo-label">XS - 128px</span>
-								<code>size="xs"</code>
-							</div>
-							<div class="logo-item">
-								<Logo size="sm" />
-								<span class="logo-label">SM - 160px</span>
-								<code>size="sm"</code>
-							</div>
-							<div class="logo-item">
-								<Logo size="md" />
-								<span class="logo-label">MD - 192px</span>
-								<code>size="md" (défaut)</code>
-							</div>
-							<div class="logo-item">
-								<Logo size="lg" />
-								<span class="logo-label">LG - 224px</span>
-								<code>size="lg"</code>
-							</div>
-							<div class="logo-item">
-								<Logo size="xl" />
-								<span class="logo-label">XL - 256px</span>
-								<code>size="xl"</code>
-							</div>
-						</div>
-					</div>
+		<div class="content-wrapper">
+		
 
-					<!-- Nouvelle section : Variantes de couleur -->
-					<div class="logo-variants-demo">
-						<h3>Variantes de couleur</h3>
-						<div class="variants-grid">
-							<div class="variant-item">
-								<Logo size="lg" variant="default" />
-								<span class="variant-label">Default</span>
-								<code>variant="default"</code>
-							</div>
-							<div class="variant-item dark-background">
-								<Logo size="lg" variant="light" />
-								<span class="variant-label">Light</span>
-								<code>variant="light"</code>
-							</div>
-							<div class="variant-item">
-								<Logo size="lg" variant="dark" />
-								<span class="variant-label">Dark</span>
-								<code>variant="dark"</code>
-							</div>
-							<div class="variant-item">
-								<Logo size="lg" variant="blue" />
-								<span class="variant-label">Blue</span>
-								<code>variant="blue"</code>
-							</div>
-							<div class="variant-item">
-								<Logo size="lg" variant="orange" />
-								<span class="variant-label">Orange</span>
-								<code>variant="orange"</code>
-							</div>
-						</div>
-					</div>
-
-					<!-- Nouvelle section : Animations et effets -->
-					<div class="logo-animations-demo">
-						<h3>Animations et effets</h3>
-						<div class="animations-grid">
-							<div class="animation-item">
-								<Logo size="lg" class="animate-pulse" />
-								<span class="animation-label">Pulse</span>
-								<code>class="animate-pulse"</code>
-							</div>
-							<div class="animation-item">
-								<Logo size="lg" class="custom-hover-effect" />
-								<span class="animation-label">Hover Effect</span>
-								<code>class="custom-hover-effect"</code>
-							</div>
-							<div class="animation-item">
-								<Logo size="lg" class="custom-shadow-effect" />
-								<span class="animation-label">Shadow</span>
-								<code>class="custom-shadow-effect"</code>
-							</div>
-						</div>
-					</div>
-
-					<div class="logo-code">
-						<h3>Comment utiliser</h3>
-						<div class="code-examples">
-							<div class="code-block">
-								<h4>Import du composant</h4>
-								<pre><code>---
-import Logo from '../components/Logo.astro';
----</code></pre>
-							</div>
-							<div class="code-block">
-								<h4>Utilisation basique</h4>
-								<pre><code>&lt;Logo /&gt;
-&lt;Logo size="lg" /&gt;
-&lt;Logo size="xl" variant="blue" /&gt;
-&lt;Logo class="my-custom-class" /&gt;</code></pre>
-							</div>
-							<div class="code-block">
-								<h4>Props disponibles</h4>
-								<ul class="props-list">
-									<li><strong>size:</strong> 'xs' | 'sm' | 'md' | 'lg' | 'xl' (défaut: 'md')</li>
-									<li><strong>variant:</strong> 'default' | 'light' | 'dark' | 'blue' | 'orange' (défaut: 'default')</li>
-									<li><strong>class:</strong> string - Classes CSS personnalisées</li>
-								</ul>
-							</div>
-							<div class="code-block">
-								<h4>Exemples d'usage contextuel</h4>
-								<pre><code>// Header
-&lt;Logo size="sm" variant="default" /&gt;
-
-// Footer sur fond sombre
-&lt;Logo size="xs" variant="light" /&gt;
-
-// Page d'accueil
-&lt;Logo size="xl" variant="default" /&gt;
-
-// Avec animation
-&lt;Logo size="lg" class="animate-pulse" /&gt;</code></pre>
-							</div>
-						</div>
-					</div>
-
-					<!-- Nouvelle section : Usage contextuel -->
-					<div class="logo-context-demo">
-						<h3>Usage contextuel</h3>
-						
-						<!-- Header demo -->
-						<div class="context-example">
-							<h4>Dans un header</h4>
-							<div class="demo-header">
-								<Logo size="sm" variant="default" />
-								<nav class="demo-nav">
-									<a href="#">Accueil</a>
-									<a href="#">Services</a>
-									<a href="#">Contact</a>
-								</nav>
-							</div>
-						</div>
-
-						<!-- Footer demo -->
-						<div class="context-example">
-							<h4>Dans un footer</h4>
-							<div class="demo-footer">
-								<div class="footer-content">
-									<Logo size="xs" variant="light" />
-									<p>© 2024 Notre entreprise. Tous droits réservés.</p>
+			<main class="main">
+				<header class="td-header">
+					<h1>Design System</h1>
+					<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
+				</header>
+				<!-- Logo Section -->
+				<section class="td-section" id="logo">
+					<h2>Logo</h2>
+					<div class="logo-examples">
+						<div class="logo-size-demo">
+							<h3>Tailles disponibles</h3>
+							<div class="logo-sizes">
+								<div class="logo-item">
+									<Logo size="xs" />
+									<span class="logo-label">XS - 128px</span>
+									<code>size="xs"</code>
+								</div>
+								<div class="logo-item">
+									<Logo size="sm" />
+									<span class="logo-label">SM - 160px</span>
+									<code>size="sm"</code>
+								</div>
+								<div class="logo-item">
+									<Logo size="md" />
+									<span class="logo-label">MD - 192px</span>
+									<code>size="md" (défaut)</code>
+								</div>
+								<div class="logo-item">
+									<Logo size="lg" />
+									<span class="logo-label">LG - 224px</span>
+									<code>size="lg"</code>
+								</div>
+								<div class="logo-item">
+									<Logo size="xl" />
+									<span class="logo-label">XL - 256px</span>
+									<code>size="xl"</code>
 								</div>
 							</div>
 						</div>
 
-						<!-- Card demo -->
-						<div class="context-example">
-							<h4>Dans une carte</h4>
-							<div class="demo-card">
-								<Logo size="sm" variant="blue" />
-								<h5>Notre service premium</h5>
-								<p>Découvrez notre offre avec ce logo intégré dans le design de la carte.</p>
-								<button class="td-btn td-btn-small td-btn-primary">En savoir plus</button>
+						<!-- Variantes de couleur -->
+						<div class="logo-variants-demo">
+							<h3>Variantes de couleur</h3>
+							<div class="variants-grid">
+								<div class="variant-item">
+									<Logo size="lg" variant="default" />
+									<span class="variant-label">Default</span>
+									<code>variant="default"</code>
+								</div>
+								<div class="variant-item dark-background">
+									<Logo size="lg" variant="light" />
+									<span class="variant-label">Light</span>
+									<code>variant="light"</code>
+								</div>
+								<div class="variant-item">
+									<Logo size="lg" variant="dark" />
+									<span class="variant-label">Dark</span>
+									<code>variant="dark"</code>
+								</div>
+								<div class="variant-item">
+									<Logo size="lg" variant="blue" />
+									<span class="variant-label">Blue</span>
+									<code>variant="blue"</code>
+								</div>
+								<div class="variant-item">
+									<Logo size="lg" variant="orange" />
+									<span class="variant-label">Orange</span>
+									<code>variant="orange"</code>
+								</div>
+							</div>
+						</div>
+
+						<!-- Animations et effets -->
+						<div class="logo-animations-demo">
+							<h3>Animations et effets</h3>
+							<div class="animations-grid">
+								<div class="animation-item">
+									<Logo size="lg" class="animate-pulse" />
+									<span class="animation-label">Pulse</span>
+									<code>class="animate-pulse"</code>
+								</div>
+								<div class="animation-item">
+									<Logo size="lg" class="custom-hover-effect" />
+									<span class="animation-label">Hover Effect</span>
+									<code>class="custom-hover-effect"</code>
+								</div>
+								<div class="animation-item">
+									<Logo size="lg" class="custom-shadow-effect" />
+									<span class="animation-label">Shadow</span>
+									<code>class="custom-shadow-effect"</code>
+								</div>
+							</div>
+						</div>
+
+						<div class="logo-code">
+							<h3>Comment utiliser</h3>
+							<div class="code-examples">
+								<div class="code-block">
+									<h4>Import du composant</h4>
+									<pre><code>---
+import Logo from '../components/Logo.astro';
+---</code></pre>
+								</div>
+								<div class="code-block">
+									<h4>Utilisation basique</h4>
+									<pre><code>&lt;Logo /&gt;
+&lt;Logo size="lg" /&gt;
+&lt;Logo size="xl" variant="blue" /&gt;
+&lt;Logo class="my-custom-class" /&gt;</code></pre>
+								</div>
+								<div class="code-block">
+									<h4>Props disponibles</h4>
+									<ul class="props-list">
+										<li><strong>size:</strong> 'xs' | 'sm' | 'md' | 'lg' | 'xl' (défaut: 'md')</li>
+										<li><strong>variant:</strong> 'default' | 'light' | 'dark' | 'blue' | 'orange' (défaut: 'default')</li>
+										<li><strong>class:</strong> string - Classes CSS personnalisées</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Usage contextuel -->
+						<div class="logo-context-demo">
+							<h3>Usage contextuel</h3>
+							
+							<!-- Header demo -->
+							<div class="context-example">
+								<h4>Dans un header</h4>
+								<div class="demo-header">
+									<Logo size="sm" variant="default" />
+									<nav class="demo-nav">
+										<a href="#">Accueil</a>
+										<a href="#">Services</a>
+										<a href="#">Contact</a>
+									</nav>
+								</div>
+							</div>
+
+							<!-- Footer demo -->
+							<div class="context-example">
+								<h4>Dans un footer</h4>
+								<div class="demo-footer">
+									<div class="footer-content">
+										<Logo size="xs" variant="light" />
+										<p>© 2024 Notre entreprise. Tous droits réservés.</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Card demo -->
+							<div class="context-example">
+								<h4>Dans une carte</h4>
+								<div class="demo-card">
+									<Logo size="sm" variant="blue" />
+									<h5>Notre service premium</h5>
+									<p>Découvrez notre offre avec ce logo intégré dans le design de la carte.</p>
+									<button class="td-btn td-btn-small td-btn-primary">En savoir plus</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<!-- Colors -->
-			<section class="td-section">
-				<h2>Couleurs</h2>
-				<div class="color-grid">
-					<div class="color-card">
-						<div class="color-sample color-background"></div>
-						<div class="color-info">
-							<h3>Background</h3>
-							<code>--color-background</code>
-							<span class="color-value">#faf5dd</span>
-							<span class="color-description">Couleur de fond principale du site</span>
-						</div>
-					</div>
-					<div class="color-card">
-						<div class="color-sample color-text"></div>
-						<div class="color-info">
-							<h3>Text Primary</h3>
-							<code>--color-text</code>
-							<span class="color-value">#222222</span>
-							<span class="color-description">Couleur principale pour la typographie</span>
-						</div>
-					</div>
-					<div class="color-card">
-						<div class="color-sample color-text-light"></div>
-						<div class="color-info">
-							<h3>Text Light</h3>
-							<code>--color-text-light</code>
-							<span class="color-value">#444444</span>
-							<span class="color-description">Couleur pour les textes secondaires</span>
-						</div>
-					</div>
-					<div class="color-card">
-						<div class="color-sample color-tertiary"></div>
-						<div class="color-info">
-							<h3>Tertiary</h3>
-							<code>--color-tertiary</code>
-							<span class="color-value">#1669B6</span>
-							<span class="color-description">Couleur d'accentuation bleue (utilisée dans le logo)</span>
-						</div>
-					</div>
-					<div class="color-card">
-						<div class="color-sample color-highlight"></div>
-						<div class="color-info">
-							<h3>Highlight</h3>
-							<code>--color-highlight</code>
-							<span class="color-value">#FF5C33</span>
-							<span class="color-description">Couleur pour les éléments importants (variante orange du logo)</span>
-						</div>
-					</div>
-					<div class="color-card">
-						<div class="color-sample color-surface"></div>
-						<div class="color-info">
-							<h3>Surface</h3>
-							<code>--color-surface</code>
-							<span class="color-value">rgba(255,255,255,0.8)</span>
-							<span class="color-description">Couleur des cartes et surfaces</span>
-						</div>
-					</div>
-					<div class="color-card">
-						<div class="color-sample color-success"></div>
-						<div class="color-info">
-							<h3>Success</h3>
-							<code>--color-success</code>
-							<span class="color-value">#10b981</span>
-						</div>
-					</div>
-					<div class="color-card">
-						<div class="color-sample color-warning"></div>
-						<div class="color-info">
-							<h3>Warning</h3>
-							<code>--color-warning</code>
-							<span class="color-value">#f59e0b</span>
-						</div>
-					</div>
-					<div class="color-card">
-						<div class="color-sample color-danger"></div>
-						<div class="color-info">
-							<h3>Danger</h3>
-							<code>--color-danger</code>
-							<span class="color-value">#ef4444</span>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Typography -->
-			<section class="td-section">
-				<h2>Typographie</h2>
-				<div class="typography-samples">
-					<div class="type-sample">
-						<h1>Heading 1</h1>
-						<code>h1, .h1</code>
-					</div>
-					<div class="type-sample">
-						<h2>Heading 2</h2>
-						<code>h2, .h2</code>
-					</div>
-					<div class="type-sample">
-						<h3>Heading 3</h3>
-						<code>h3, .h3</code>
-					</div>
-					<div class="type-sample">
-						<h4>Heading 4</h4>
-						<code>h4, .h4</code>
-					</div>
-					<div class="type-sample">
-						<p>Body text - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						<code>p, .body</code>
-					</div>
-					<div class="type-sample">
-						<small>Small text - Informations complémentaires</small>
-						<code>small, .small</code>
-					</div>
-				</div>
-			</section>
-
-			<!-- Buttons -->
-			<section class="td-section">
-				<h2>Boutons</h2>
-
-				<div class="component-example">
-					<div class="td-button-group">
-						<h3>Primary Buttons</h3>
-						<button class="td-btn td-btn-primary">Button primary</button>
-						<button class="td-btn td-btn-primary" disabled>Button primary disabled</button>
-					</div>
-					<div class="td-button-group">
-						<h3>Secondary Buttons</h3>
-						<button class="td-btn td-btn-secondary">Button secondary</button>
-						<button class="td-btn td-btn-secondary" disabled>Button secondary disabled</button>
-					</div>
-					<div class="td-button-group">
-						<h3>Tertiary Buttons</h3>
-						<button class="td-btn td-btn-tertiary">Button tertiary</button>
-						<button class="td-btn td-btn-tertiary td-btn-outline">Button tertiary outline</button>
-						<button class="td-btn td-btn-tertiary" disabled>Button tertiary disabled</button>
-					</div>
-					<div class="td-button-group">
-						<h3>Highlight Buttons</h3>
-						<button class="td-btn td-btn-highlight">Button highlight</button>
-						<button class="td-btn td-btn-highlight td-btn-outline">Button highlight outline</button>
-						<button class="td-btn td-btn-highlight" disabled>Button highlight disabled</button>
-					</div>
-					<div class="td-button-group">
-						<h3>Success Buttons</h3>
-						<button class="td-btn td-btn-success">Button success</button>
-						<button class="td-btn td-btn-success td-btn-outline">Button success outline</button>
-						<button class="td-btn td-btn-success" disabled>Button success disabled</button>
-					</div>
-					<div class="td-button-group">
-						<h3>Warning Buttons</h3>
-						<button class="td-btn td-btn-warning">Button warning</button>
-						<button class="td-btn td-btn-warning td-btn-outline">Button warning outline</button>
-						<button class="td-btn td-btn-warning" disabled>Button warning disabled</button>
-					</div>
-					<div class="td-button-group">
-						<h3>Danger Buttons</h3>
-						<button class="td-btn td-btn-danger">Button danger</button>
-						<button class="td-btn td-btn-danger td-btn-outline">Button danger outline</button>
-						<button class="td-btn td-btn-danger" disabled>Button danger disabled</button>
-					</div>
-					
-					<div class="td-button-group">
-						<h3>Large Buttons</h3>
-						<button class="td-btn td-btn-max td-btn-primary">Button primary</button>
-						<button class="td-btn td-btn-max td-btn-primary" disabled>Button primary disabled</button>
-						<button class="td-btn td-btn-max td-btn-secondary">Button secondary</button>
-						<button class="td-btn td-btn-max td-btn-tertiary">Button tertiary</button>
-						<button class="td-btn td-btn-max td-btn-highlight">Button highlight</button>
-						<button class="td-btn td-btn-max td-btn-success">Button success</button>
-						<button class="td-btn td-btn-max td-btn-warning">Button warning</button>
-						<button class="td-btn td-btn-max td-btn-danger">Button danger</button>
-					</div>
-					
-					<div class="td-button-group">
-						<h3>Small Buttons</h3>
-						<button class="td-btn td-btn-small td-btn-primary">Button primary</button>
-						<button class="td-btn td-btn-small td-btn-primary" disabled>Button primary disabled</button>
-						<button class="td-btn td-btn-small td-btn-secondary">Button secondary</button>
-						<button class="td-btn td-btn-small td-btn-tertiary">Button tertiary</button>
-						<button class="td-btn td-btn-small td-btn-success">Button success</button>
-						<button class="td-btn td-btn-small td-btn-warning">Button warning</button>
-						<button class="td-btn td-btn-small td-btn-danger">Button danger</button>
-					</div>
-
-				</div>
-			</section>
-
-			<!-- Form Elements -->
-			<section class="td-section">
-				<h2>Éléments de formulaire</h2>
-				<div class="form-examples">
-					<div class="form-group">
-						<label for="input-text">Input Text</label>
-						<input type="text" id="input-text" placeholder="Entrez votre texte" />
-					</div>
-					<div class="form-group">
-						<label for="input-email">Input Email</label>
-						<input type="email" id="input-email" placeholder="email@exemple.com" />
-					</div>
-					<div class="form-group">
-						<label for="textarea">Textarea</label>
-						<textarea id="textarea" placeholder="Votre message..."></textarea>
-					</div>
-					<div class="form-group">
-						<label for="select">Select</label>
-						<select id="select">
-							<option>Option 1</option>
-							<option>Option 2</option>
-							<option>Option 3</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label class="checkbox-label">
-							<input type="checkbox" />
-							<span class="checkmark"></span>
-							Checkbox
-						</label>
-					</div>
-					<div class="form-group">
-						<label class="radio-label">
-							<input type="radio" name="radio" />
-							<span class="radiomark"></span>
-							Radio 1
-						</label>
-						<label class="radio-label">
-							<input type="radio" name="radio" />
-							<span class="radiomark"></span>
-							Radio 2
-						</label>
-					</div>
-				</div>
-			</section>
-
-			<!-- Cards -->
-			<section class="td-section">
-				<h2>Cartes</h2>
-				<div class="card-examples">
-					<div class="card">
-						<div class="card-header">
-							<h3>Carte basique</h3>
-						</div>
-						<div class="card-body">
-							<p>Contenu de la carte avec du texte et des informations importantes.</p>
-						</div>
-						<div class="card-footer">
-							<button class="td-btn td-btn-small td-btn-primary">Action</button>
-						</div>
-					</div>
-					<div class="card card-elevated">
-						<div class="card-header">
-							<h3>Carte avec élévation</h3>
-						</div>
-						<div class="card-body">
-							<p>Cette carte utilise une ombre plus prononcée pour créer un effet d'élévation.</p>
-						</div>
-					</div>
-					<div class="card card-with-logo">
-						<div class="card-header">
-							<Logo size="xs" variant="blue" />
-							<h3>Carte avec logo</h3>
-						</div>
-						<div class="card-body">
-							<p>Exemple d'intégration du logo dans une carte pour renforcer l'identité visuelle.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Spacing -->
-			<section class="td-section">
-				<h2>Espacement</h2>
-				<div class="spacing-examples">
-					<div class="spacing-demo">
-						<h3>Variables d'espacement</h3>
-						<div class="spacing-grid">
-							<div class="spacing-item">
-								<div class="spacing-box spacing-xs">XS - 4px</div>
-								<code>var(--spacing-xs)</code>
+				<!-- Colors -->
+				<section class="td-section" id="couleurs">
+					<h2>Couleurs</h2>
+					<div class="color-grid">
+						<div class="color-card">
+							<div class="color-sample color-background"></div>
+							<div class="color-info">
+								<h3>Background</h3>
+								<code>--color-background</code>
+								<span class="color-value">#faf5dd</span>
+								<span class="color-description">Couleur de fond principale du site</span>
 							</div>
-							<div class="spacing-item">
-								<div class="spacing-box spacing-sm">SM - 8px</div>
-								<code>var(--spacing-sm)</code>
+						</div>
+						<div class="color-card">
+							<div class="color-sample color-text"></div>
+							<div class="color-info">
+								<h3>Text Primary</h3>
+								<code>--color-text</code>
+								<span class="color-value">#222222</span>
+								<span class="color-description">Couleur principale pour la typographie</span>
 							</div>
-							<div class="spacing-item">
-								<div class="spacing-box spacing-md">MD - 16px</div>
-								<code>var(--spacing-md)</code>
+						</div>
+						<div class="color-card">
+							<div class="color-sample color-text-light"></div>
+							<div class="color-info">
+								<h3>Text Light</h3>
+								<code>--color-text-light</code>
+								<span class="color-value">#444444</span>
+								<span class="color-description">Couleur pour les textes secondaires</span>
 							</div>
-							<div class="spacing-item">
-								<div class="spacing-box spacing-lg">LG - 24px</div>
-								<code>var(--spacing-lg)</code>
+						</div>
+						<div class="color-card">
+							<div class="color-sample color-tertiary"></div>
+							<div class="color-info">
+								<h3>Tertiary</h3>
+								<code>--color-tertiary</code>
+								<span class="color-value">#1669B6</span>
+								<span class="color-description">Couleur d'accentuation bleue (utilisée dans le logo)</span>
 							</div>
-							<div class="spacing-item">
-								<div class="spacing-box spacing-xl">XL - 32px</div>
-								<code>var(--spacing-xl)</code>
+						</div>
+						<div class="color-card">
+							<div class="color-sample color-highlight"></div>
+							<div class="color-info">
+								<h3>Highlight</h3>
+								<code>--color-highlight</code>
+								<span class="color-value">#FF5C33</span>
+								<span class="color-description">Couleur pour les éléments importants (variante orange du logo)</span>
 							</div>
-							<div class="spacing-item">
-								<div class="spacing-box spacing-2xl">2XL - 48px</div>
-								<code>var(--spacing-2xl)</code>
+						</div>
+						<div class="color-card">
+							<div class="color-sample color-surface"></div>
+							<div class="color-info">
+								<h3>Surface</h3>
+								<code>--color-surface</code>
+								<span class="color-value">rgba(255,255,255,0.8)</span>
+								<span class="color-description">Couleur des cartes et surfaces</span>
+							</div>
+						</div>
+						<div class="color-card">
+							<div class="color-sample color-success"></div>
+							<div class="color-info">
+								<h3>Success</h3>
+								<code>--color-success</code>
+								<span class="color-value">#10b981</span>
+							</div>
+						</div>
+						<div class="color-card">
+							<div class="color-sample color-warning"></div>
+							<div class="color-info">
+								<h3>Warning</h3>
+								<code>--color-warning</code>
+								<span class="color-value">#f59e0b</span>
+							</div>
+						</div>
+						<div class="color-card">
+							<div class="color-sample color-danger"></div>
+							<div class="color-info">
+								<h3>Danger</h3>
+								<code>--color-danger</code>
+								<span class="color-value">#ef4444</span>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<!-- Grid System -->
-			<section class="td-section">
-				<h2>Système de grille</h2>
-				<div class="grid-examples">
-					<div class="grid-example-item">
-						<h3>Grille 2 colonnes</h3>
-						<div class="grid grid-2">
-							<div class="grid-item">1/2</div>
-							<div class="grid-item">1/2</div>
+				<!-- Typography -->
+				<section class="td-section" id="typographie">
+					<h2>Typographie</h2>
+					<div class="typography-samples">
+						<div class="type-sample">
+							<h1>Heading 1</h1>
+							<code>h1, .h1</code>
+						</div>
+						<div class="type-sample">
+							<h2>Heading 2</h2>
+							<code>h2, .h2</code>
+						</div>
+						<div class="type-sample">
+							<h3>Heading 3</h3>
+							<code>h3, .h3</code>
+						</div>
+						<div class="type-sample">
+							<h4>Heading 4</h4>
+							<code>h4, .h4</code>
+						</div>
+						<div class="type-sample">
+							<p>Body text - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<code>p, .body</code>
+						</div>
+						<div class="type-sample">
+							<small>Small text - Informations complémentaires</small>
+							<code>small, .small</code>
 						</div>
 					</div>
-					<div class="grid-example-item">
-						<h3>Grille 3 colonnes</h3>
-						<div class="grid grid-3">
-							<div class="grid-item">1/3</div>
-							<div class="grid-item">1/3</div>
-							<div class="grid-item">1/3</div>
-						</div>
-					</div>
-					<div class="grid-example-item">
-						<h3>Grille 4 colonnes</h3>
-						<div class="grid grid-4">
-							<div class="grid-item">1/4</div>
-							<div class="grid-item">1/4</div>
-							<div class="grid-item">1/4</div>
-							<div class="grid-item">1/4</div>
-						</div>
-					</div>
-					<div class="grid-example-item">
-						<h3>Grille responsive</h3>
-						<div class="grid grid-responsive">
-							<div class="grid-item">Auto</div>
-							<div class="grid-item">Auto</div>
-							<div class="grid-item">Auto</div>
-							<div class="grid-item">Auto</div>
-						</div>
-					</div>
-				</div>
-			</section>
+				</section>
 
-			<!-- Shadows & Effects -->
-			<section class="td-section">
-				<h2>Ombres et effets</h2>
-				<div class="shadow-examples">
-					<div class="shadow-card shadow-sm">
-						<h4>Small</h4>
-						<code>var(--shadow-sm)</code>
+				<!-- Buttons -->
+				<section class="td-section" id="boutons">
+					<h2>Boutons</h2>
+					<div class="component-example">
+						<div class="td-button-group">
+							<h3>Primary Buttons</h3>
+							<button class="td-btn td-btn-primary">Button primary</button>
+							<button class="td-btn td-btn-primary" disabled>Button primary disabled</button>
+						</div>
+						<div class="td-button-group">
+							<h3>Secondary Buttons</h3>
+							<button class="td-btn td-btn-secondary">Button secondary</button>
+							<button class="td-btn td-btn-secondary" disabled>Button secondary disabled</button>
+						</div>
+						<div class="td-button-group">
+							<h3>Tertiary Buttons</h3>
+							<button class="td-btn td-btn-tertiary">Button tertiary</button>
+							<button class="td-btn td-btn-tertiary td-btn-outline">Button tertiary outline</button>
+							<button class="td-btn td-btn-tertiary" disabled>Button tertiary disabled</button>
+						</div>
+						<div class="td-button-group">
+							<h3>Highlight Buttons</h3>
+							<button class="td-btn td-btn-highlight">Button highlight</button>
+							<button class="td-btn td-btn-highlight td-btn-outline">Button highlight outline</button>
+							<button class="td-btn td-btn-highlight" disabled>Button highlight disabled</button>
+						</div>
+						<div class="td-button-group">
+							<h3>Success Buttons</h3>
+							<button class="td-btn td-btn-success">Button success</button>
+							<button class="td-btn td-btn-success td-btn-outline">Button success outline</button>
+							<button class="td-btn td-btn-success" disabled>Button success disabled</button>
+						</div>
+						<div class="td-button-group">
+							<h3>Warning Buttons</h3>
+							<button class="td-btn td-btn-warning">Button warning</button>
+							<button class="td-btn td-btn-warning td-btn-outline">Button warning outline</button>
+							<button class="td-btn td-btn-warning" disabled>Button warning disabled</button>
+						</div>
+						<div class="td-button-group">
+							<h3>Danger Buttons</h3>
+							<button class="td-btn td-btn-danger">Button danger</button>
+							<button class="td-btn td-btn-danger td-btn-outline">Button danger outline</button>
+							<button class="td-btn td-btn-danger" disabled>Button danger disabled</button>
+						</div>
+						
+						<div class="td-button-group">
+							<h3>Large Buttons</h3>
+							<button class="td-btn td-btn-max td-btn-primary">Button primary</button>
+							<button class="td-btn td-btn-max td-btn-primary" disabled>Button primary disabled</button>
+							<button class="td-btn td-btn-max td-btn-secondary">Button secondary</button>
+							<button class="td-btn td-btn-max td-btn-tertiary">Button tertiary</button>
+							<button class="td-btn td-btn-max td-btn-highlight">Button highlight</button>
+							<button class="td-btn td-btn-max td-btn-success">Button success</button>
+							<button class="td-btn td-btn-max td-btn-warning">Button warning</button>
+							<button class="td-btn td-btn-max td-btn-danger">Button danger</button>
+						</div>
+						
+						<div class="td-button-group">
+							<h3>Small Buttons</h3>
+							<button class="td-btn td-btn-small td-btn-primary">Button primary</button>
+							<button class="td-btn td-btn-small td-btn-primary" disabled>Button primary disabled</button>
+							<button class="td-btn td-btn-small td-btn-secondary">Button secondary</button>
+							<button class="td-btn td-btn-small td-btn-tertiary">Button tertiary</button>
+							<button class="td-btn td-btn-small td-btn-success">Button success</button>
+							<button class="td-btn td-btn-small td-btn-warning">Button warning</button>
+							<button class="td-btn td-btn-small td-btn-danger">Button danger</button>
+						</div>
 					</div>
-					<div class="shadow-card shadow-md">
-						<h4>Medium</h4>
-						<code>var(--shadow-md)</code>
-					</div>
-					<div class="shadow-card shadow-lg">
-						<h4>Large</h4>
-						<code>var(--shadow-lg)</code>
-					</div>
-				</div>
-			</section>
+				</section>
 
-		</main>
+				<!-- Form Elements -->
+				<section class="td-section" id="formulaires">
+					<h2>Éléments de formulaire</h2>
+					<div class="form-examples">
+						<div class="form-group">
+							<label for="input-text">Input Text</label>
+							<input type="text" id="input-text" placeholder="Entrez votre texte" />
+						</div>
+						<div class="form-group">
+							<label for="input-email">Input Email</label>
+							<input type="email" id="input-email" placeholder="email@exemple.com" />
+						</div>
+						<div class="form-group">
+							<label for="textarea">Textarea</label>
+							<textarea id="textarea" placeholder="Votre message..."></textarea>
+						</div>
+						<div class="form-group">
+							<label for="select">Select</label>
+							<select id="select">
+								<option>Option 1</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="checkbox-label">
+								<input type="checkbox" />
+								<span class="checkmark"></span>
+								Checkbox
+							</label>
+						</div>
+						<div class="form-group">
+							<label class="radio-label">
+								<input type="radio" name="radio" />
+								<span class="radiomark"></span>
+								Radio 1
+							</label>
+							<label class="radio-label">
+								<input type="radio" name="radio" />
+								<span class="radiomark"></span>
+								Radio 2
+							</label>
+						</div>
+					</div>
+				</section>
+
+				<!-- Cards -->
+				<section class="td-section" id="cartes">
+					<h2>Cartes</h2>
+					<div class="card-examples">
+						<div class="card">
+							<div class="card-header">
+								<h3>Carte basique</h3>
+							</div>
+							<div class="card-body">
+								<p>Contenu de la carte avec du texte et des informations importantes.</p>
+							</div>
+							<div class="card-footer">
+								<button class="td-btn td-btn-small td-btn-primary">Action</button>
+							</div>
+						</div>
+						<div class="card card-elevated">
+							<div class="card-header">
+								<h3>Carte avec élévation</h3>
+							</div>
+							<div class="card-body">
+								<p>Cette carte utilise une ombre plus prononcée pour créer un effet d'élévation.</p>
+							</div>
+						</div>
+						<div class="card card-with-logo">
+							<div class="card-header">
+								<Logo size="xs" variant="blue" />
+								<h3>Carte avec logo</h3>
+							</div>
+							<div class="card-body">
+								<p>Exemple d'intégration du logo dans une carte pour renforcer l'identité visuelle.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Spacing -->
+				<section class="td-section" id="espacement">
+					<h2>Espacement</h2>
+					<div class="spacing-examples">
+						<div class="spacing-demo">
+							<h3>Variables d'espacement</h3>
+							<div class="spacing-grid">
+								<div class="spacing-item">
+									<div class="spacing-box spacing-xs">XS - 4px</div>
+									<code>var(--spacing-xs)</code>
+								</div>
+								<div class="spacing-item">
+									<div class="spacing-box spacing-sm">SM - 8px</div>
+									<code>var(--spacing-sm)</code>
+								</div>
+								<div class="spacing-item">
+									<div class="spacing-box spacing-md">MD - 16px</div>
+									<code>var(--spacing-md)</code>
+								</div>
+								<div class="spacing-item">
+									<div class="spacing-box spacing-lg">LG - 24px</div>
+									<code>var(--spacing-lg)</code>
+								</div>
+								<div class="spacing-item">
+									<div class="spacing-box spacing-xl">XL - 32px</div>
+									<code>var(--spacing-xl)</code>
+								</div>
+								<div class="spacing-item">
+									<div class="spacing-box spacing-2xl">2XL - 48px</div>
+									<code>var(--spacing-2xl)</code>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Grid System -->
+				<section class="td-section" id="grille">
+					<h2>Système de grille</h2>
+					<div class="grid-examples">
+						<div class="grid-example-item">
+							<h3>Grille 2 colonnes</h3>
+							<div class="grid grid-2">
+								<div class="grid-item">1/2</div>
+								<div class="grid-item">1/2</div>
+							</div>
+						</div>
+						<div class="grid-example-item">
+							<h3>Grille 3 colonnes</h3>
+							<div class="grid grid-3">
+								<div class="grid-item">1/3</div>
+								<div class="grid-item">1/3</div>
+								<div class="grid-item">1/3</div>
+							</div>
+						</div>
+						<div class="grid-example-item">
+							<h3>Grille 4 colonnes</h3>
+							<div class="grid grid-4">
+								<div class="grid-item">1/4</div>
+								<div class="grid-item">1/4</div>
+								<div class="grid-item">1/4</div>
+								<div class="grid-item">1/4</div>
+							</div>
+						</div>
+						<div class="grid-example-item">
+							<h3>Grille responsive</h3>
+							<div class="grid grid-responsive">
+								<div class="grid-item">Auto</div>
+								<div class="grid-item">Auto</div>
+								<div class="grid-item">Auto</div>
+								<div class="grid-item">Auto</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Shadows & Effects -->
+				<section class="td-section" id="ombres">
+					<h2>Ombres et effets</h2>
+					<div class="shadow-examples">
+						<div class="shadow-card shadow-sm">
+							<h4>Small</h4>
+							<code>var(--shadow-sm)</code>
+						</div>
+						<div class="shadow-card shadow-md">
+							<h4>Medium</h4>
+							<code>var(--shadow-md)</code>
+						</div>
+						<div class="shadow-card shadow-lg">
+							<h4>Large</h4>
+							<code>var(--shadow-lg)</code>
+						</div>
+					</div>
+				</section>
+
+			</main>
+		</div>
 
 		<!-- Footer -->
 		<footer class="td-footer">
 			<div class="td-container">
 				<Logo size="xs" variant="default" />
 				<div class="footer-info">
-					<p><strong>Design System - Version 2.0</strong></p>
-					<p class="footer-note">Mise à jour avec le nouveau composant Logo SVG inline. Toutes les variantes et animations sont maintenant disponibles.</p>
+					<p><strong>Design System - Version 2.1</strong></p>
+					<p class="footer-note">Version avec navigation latérale pour une meilleure expérience utilisateur. Toutes les variantes et animations sont disponibles avec navigation par ancres.</p>
 				</div>
 		 	</div>
 		</footer>
+
+		<!-- JavaScript pour la navigation -->
+		<script>
+			// Toggle mobile navigation
+			const navToggle = document.getElementById('nav-toggle');
+			const sidebarNav = document.getElementById('sidebar-nav');
+			const navOverlay = document.getElementById('nav-overlay');
+
+			function toggleNav() {
+				if (sidebarNav) {
+					sidebarNav.classList.toggle('active');
+				}
+				document.body.classList.toggle('nav-open');
+			}
+
+			function closeNav() {
+				if (sidebarNav) {
+					sidebarNav.classList.remove('active');
+				}
+				document.body.classList.remove('nav-open');
+			}
+
+			// Event listeners avec vérification null
+			if (navToggle) {
+				navToggle.addEventListener('click', toggleNav);
+			}
+
+			if (navOverlay) {
+				navOverlay.addEventListener('click', closeNav);
+			}
+
+			// Smooth scrolling for anchor links
+			document.querySelectorAll('.nav-link').forEach((link) => {
+				link.addEventListener('click', function(e) {
+					e.preventDefault();
+					const anchorElement = e.currentTarget as HTMLAnchorElement;
+					const href = anchorElement.getAttribute('href');
+					if (!href) return;
+					
+					const targetId = href.substring(1);
+					const targetSection = document.getElementById(targetId);
+					
+					if (targetSection) {
+						// Close mobile nav
+						closeNav();
+						
+						// Smooth scroll
+						targetSection.scrollIntoView({ 
+							behavior: 'smooth',
+							block: 'start'
+						});
+						
+						// Update active link
+						document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+						anchorElement.classList.add('active');
+					}
+				});
+			});
+
+			// Highlight current section in navigation
+			function updateActiveNavLink() {
+				const sections = document.querySelectorAll('.td-section[id]') as NodeListOf<HTMLElement>;
+				const navLinks = document.querySelectorAll('.nav-link');
+				
+				let current = '';
+				
+				sections.forEach((section) => {
+					const sectionTop = section.offsetTop - 100; // Offset for header
+					if (window.pageYOffset >= sectionTop) {
+						const id = section.getAttribute('id');
+						if (id) {
+							current = id;
+						}
+					}
+				});
+				
+				navLinks.forEach((link) => {
+					link.classList.remove('active');
+					const href = link.getAttribute('href');
+					if (href === `#${current}`) {
+						link.classList.add('active');
+					}
+				});
+			}
+
+			// Update active link on scroll
+			let ticking = false;
+			
+			window.addEventListener('scroll', () => {
+				if (!ticking) {
+					requestAnimationFrame(() => {
+						updateActiveNavLink();
+						ticking = false;
+					});
+					ticking = true;
+				}
+			});
+
+			// Initialize active link on load
+			document.addEventListener('DOMContentLoaded', updateActiveNavLink);
+
+			// Handle escape key to close navigation
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Escape') {
+					closeNav();
+				}
+			});
+
+			// Handle focus trap in mobile navigation
+			if (sidebarNav) {
+				const focusableElements = sidebarNav.querySelectorAll('a[href], button:not([disabled])') as NodeListOf<HTMLElement>;
+				const firstFocusable = focusableElements[0];
+				const lastFocusable = focusableElements[focusableElements.length - 1];
+
+				sidebarNav.addEventListener('keydown', (e) => {
+					if (e.key === 'Tab') {
+						if (e.shiftKey) {
+							if (document.activeElement === firstFocusable) {
+								e.preventDefault();
+								lastFocusable?.focus();
+							}
+						} else {
+							if (document.activeElement === lastFocusable) {
+								e.preventDefault();
+								firstFocusable?.focus();
+							}
+						}
+					}
+				});
+			}
+		</script>
 
 		<style>
 			/* CSS Variables */
@@ -621,6 +762,13 @@ import Logo from '../components/Logo.astro';
 				--shadow-sm: 0 1px 2px 0 rgb(34 34 34 / 0.05);
 				--shadow-md: 0 4px 6px -1px rgb(34 34 34 / 0.1), 0 2px 4px -2px rgb(34 34 34 / 0.1);
 				--shadow-lg: 0 10px 15px -3px rgb(34 34 34 / 0.1), 0 4px 6px -4px rgb(34 34 34 / 0.1);
+
+				/* Navigation variables */
+				--nav-width: 280px;
+				--nav-background: rgba(255, 255, 255, 0.95);
+				--nav-border: rgba(34, 34, 34, 0.08);
+				--nav-link-hover: rgba(22, 105, 182, 0.1);
+				--nav-link-active: var(--color-tertiary);
 			}
 
 			/* Reset & Base Styles */
@@ -632,6 +780,7 @@ import Logo from '../components/Logo.astro';
 
 			html {
 				height: 100%;
+				scroll-behavior: smooth;
 			}
 
 			body {
@@ -642,8 +791,178 @@ import Logo from '../components/Logo.astro';
 				min-height: 100vh;
 			}
 
+			body.nav-open {
+				overflow: hidden;
+			}
+
 			h1, h2, h3, h4, h5, h6 {
 				color: var(--color-text);
+			}
+
+			/* Navigation Styles */
+			.sidebar-nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: var(--nav-width);
+				height: 100vh;
+				z-index: 1000;
+				transform: translateX(-100%);
+				transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				overflow-y: auto;
+			}
+
+			.sidebar-nav.active {
+				transform: translateX(0);
+			}
+
+			.nav-toggle {
+				position: fixed;
+				top: var(--spacing-lg);
+				left: var(--spacing-lg);
+				z-index: 1001;
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+				cursor: pointer;
+				padding: var(--spacing-sm);
+				background: var(--nav-background);
+				border: 1px solid var(--nav-border);
+				border-radius: var(--border-radius-md);
+				backdrop-filter: blur(10px);
+				transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+			}
+
+			.nav-toggle:hover {
+				background: var(--color-surface-hover);
+				transform: scale(1.05);
+			}
+
+			.hamburger {
+				width: 24px;
+				height: 3px;
+				background: var(--color-text);
+				border-radius: 2px;
+				transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				transform-origin: center;
+			}
+
+			/* Animation du menu hamburger vers X */
+			body.nav-open .nav-toggle .hamburger:nth-child(1) {
+				transform: rotate(45deg) translate(6px, 6px);
+			}
+
+			body.nav-open .nav-toggle .hamburger:nth-child(2) {
+				opacity: 0;
+				transform: scale(0);
+			}
+
+			body.nav-open .nav-toggle .hamburger:nth-child(3) {
+				transform: rotate(-45deg) translate(6px, -6px);
+			}
+
+			/* Animation du toggle quand le menu est ouvert */
+			body.nav-open .nav-toggle {
+				left: calc(var(--nav-width) + var(--spacing-lg));
+				background: rgba(255, 255, 255, 0.95);
+			}
+
+			.nav-content {
+				padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg);
+			}
+
+			.nav-title {
+				font-size: var(--font-size-lg);
+				font-weight: 600;
+				color: var(--color-text);
+				margin-bottom: var(--spacing-xl);
+				border-bottom: 1px solid var(--nav-border);
+				padding-bottom: var(--spacing-md);
+			}
+
+			.nav-list {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			.nav-list li {
+				margin-bottom: var(--spacing-xs);
+			}
+
+			.nav-link {
+				display: block;
+				padding: var(--spacing-sm) var(--spacing-md);
+				text-decoration: none;
+				color: var(--color-text);
+				font-weight: 500;
+				border-radius: var(--border-radius-md);
+				transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				position: relative;
+			}
+
+			.nav-link:hover {
+				background: var(--nav-link-hover);
+				color: var(--nav-link-active);
+				transform: translateX(8px);
+				padding-left: calc(var(--spacing-md) + 4px);
+			}
+
+			.nav-link.active {
+				background: var(--nav-link-hover);
+				color: var(--nav-link-active);
+				font-weight: 600;
+				transform: translateX(4px);
+			}
+
+			.nav-link.active::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 4px;
+				height: 70%;
+				background: var(--nav-link-active);
+				border-radius: 0 2px 2px 0;
+				animation: slideInLeft 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+			}
+
+			@keyframes slideInLeft {
+				from {
+					width: 0;
+					opacity: 0;
+				}
+				to {
+					width: 4px;
+					opacity: 1;
+				}
+			}
+
+			.nav-overlay {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				background: rgba(0, 0, 0, 0.5);
+				z-index: 999;
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				backdrop-filter: blur(2px);
+			}
+
+			body.nav-open .nav-overlay {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			/* Layout adjustments */
+			.content-wrapper {
+				margin-left: 0;
+				transition: margin-left 0.3s ease;
 			}
 
 			/* Layout */
@@ -651,6 +970,7 @@ import Logo from '../components/Logo.astro';
 				max-width: 1200px;
 				margin: 0 auto;
 				padding: var(--spacing-xl);
+				padding-top: calc(var(--spacing-xl) + 60px); /* Space for nav toggle */
 			}
 
 			.td-container {
@@ -664,20 +984,62 @@ import Logo from '../components/Logo.astro';
 				margin-bottom: var(--spacing-2xl);
 			}
 
+
 			.subtitle {
 				color: var(--color-text-light);
 				font-size: var(--font-size-lg);
-				margin-top: var(--spacing-sm);
 			}
 
 			.td-section {
 				margin: var(--spacing-xl) 0 var(--spacing-2xl) 0;
+				scroll-margin-top: 100px; /* Offset for fixed header */
 			}
 
 			.td-section h2 {
 				font-size: var(--font-size-2xl);
 				margin-bottom: var(--spacing-xl);
 				color: var(--color-text);
+			}
+
+			/* Desktop navigation */
+			@media (min-width: 1024px) {
+				.nav-toggle {
+					display: none;
+				}
+
+				.sidebar-nav {
+					transform: translateX(0);
+					position: fixed;
+				}
+
+				.content-wrapper {
+					margin-left: var(--nav-width);
+				}
+
+				.nav-overlay {
+					display: none;
+				}
+
+				/* Effet de slide au hover pour les liens desktop */
+				.nav-link {
+					overflow: hidden;
+					position: relative;
+				}
+
+				.nav-link::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: -100%;
+					width: 100%;
+					height: 100%;
+					background: linear-gradient(90deg, transparent, rgba(22, 105, 182, 0.1), transparent);
+					transition: left 0.6s ease;
+				}
+
+				.nav-link:hover::before {
+					left: 100%;
+				}
 			}
 
 			/* Logo Styles - Section améliorée */
@@ -1522,6 +1884,7 @@ import Logo from '../components/Logo.astro';
 			@media (max-width: 768px) {
 				.main {
 					padding: var(--spacing-md);
+					padding-top: calc(var(--spacing-md) + 60px);
 				}
 
 				.component-grid,
@@ -1582,11 +1945,21 @@ import Logo from '../components/Logo.astro';
 					flex-direction: column;
 					gap: var(--spacing-sm);
 				}
+
+				/* Navigation mobile improvements */
+				.nav-content {
+					padding: var(--spacing-lg);
+				}
+
+				.nav-title {
+					font-size: var(--font-size-base);
+				}
 			}
 
 			@media (max-width: 480px) {
 				.main {
 					padding: var(--spacing-sm);
+					padding-top: calc(var(--spacing-sm) + 60px);
 				}
 
 				.td-header h1 {
@@ -1607,6 +1980,137 @@ import Logo from '../components/Logo.astro';
 				.logo-context-demo,
 				.logo-code {
 					padding: var(--spacing-md);
+				}
+
+				.nav-toggle {
+					padding: var(--spacing-xs);
+				}
+
+				.hamburger {
+					width: 20px;
+					height: 2px;
+				}
+			}
+
+			/* Scroll indicator for current section */
+			.nav-link {
+				position: relative;
+			}
+
+			.nav-link::after {
+				content: '';
+				position: absolute;
+				right: var(--spacing-md);
+				top: 50%;
+				transform: translateY(-50%);
+				width: 0;
+				height: 0;
+				border-left: 4px solid var(--nav-link-active);
+				border-top: 3px solid transparent;
+				border-bottom: 3px solid transparent;
+				opacity: 0;
+				transition: all 0.2s ease;
+			}
+
+			.nav-link.active::after {
+				opacity: 1;
+			}
+
+			/* Improved focus states for accessibility */
+			.nav-link:focus {
+				outline: 2px solid var(--nav-link-active);
+				outline-offset: 2px;
+			}
+
+			.nav-toggle:focus {
+				outline: 2px solid var(--nav-link-active);
+				outline-offset: 2px;
+			}
+
+			/* Smooth transitions for all interactive elements */
+			* {
+				transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+			}
+
+			/* Custom scrollbar for navigation */
+			.sidebar-nav::-webkit-scrollbar {
+				width: 6px;
+			}
+
+			.sidebar-nav::-webkit-scrollbar-track {
+				background: transparent;
+			}
+
+			.sidebar-nav::-webkit-scrollbar-thumb {
+				background: var(--color-border);
+				border-radius: 3px;
+			}
+
+			.sidebar-nav::-webkit-scrollbar-thumb:hover {
+				background: var(--nav-link-active);
+			}
+
+			/* Enhanced mobile experience */
+			@media (max-width: 1023px) {
+
+				body.nav-open {
+					position: fixed;
+					width: 100%;
+				}
+
+				/* Animation d'entrée pour les liens de navigation mobile */
+				.sidebar-nav.active .nav-link {
+					animation: slideInFromLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+					opacity: 0;
+					transform: translateX(-20px);
+				}
+
+				.sidebar-nav.active .nav-link:nth-child(1) { animation-delay: 0.1s; }
+				.sidebar-nav.active .nav-link:nth-child(2) { animation-delay: 0.15s; }
+				.sidebar-nav.active .nav-link:nth-child(3) { animation-delay: 0.2s; }
+				.sidebar-nav.active .nav-link:nth-child(4) { animation-delay: 0.25s; }
+				.sidebar-nav.active .nav-link:nth-child(5) { animation-delay: 0.3s; }
+				.sidebar-nav.active .nav-link:nth-child(6) { animation-delay: 0.35s; }
+				.sidebar-nav.active .nav-link:nth-child(7) { animation-delay: 0.4s; }
+				.sidebar-nav.active .nav-link:nth-child(8) { animation-delay: 0.45s; }
+				.sidebar-nav.active .nav-link:nth-child(9) { animation-delay: 0.5s; }
+
+				@keyframes slideInFromLeft {
+					to {
+						opacity: 1;
+						transform: translateX(0);
+					}
+				}
+
+				/* Animation du titre de navigation */
+				.sidebar-nav.active .nav-title {
+					animation: fadeInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+					opacity: 0;
+					transform: translateY(10px);
+				}
+
+				@keyframes fadeInUp {
+					to {
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
+			}
+
+			/* Print styles */
+			@media print {
+				.sidebar-nav,
+				.nav-toggle,
+				.nav-overlay {
+					display: none !important;
+				}
+
+				.content-wrapper {
+					margin-left: 0 !important;
+				}
+
+				.main {
+					padding-top: var(--spacing-md) !important;
 				}
 			}
 		</style>
