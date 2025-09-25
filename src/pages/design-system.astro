@@ -28,7 +28,7 @@ import Logo from '../components/Logo.astro';
 				<div class="nav-content">
 					<header class="td-header">
 						<h1>
-							<Logo size="xl" variant="blue" />
+							<Logo size="md" variant="dark" />
 						</h1>
 						<h2 class="td-header-title">Design System</h2>
 						<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
@@ -86,17 +86,17 @@ import Logo from '../components/Logo.astro';
 							<h3>Variantes de couleur</h3>
 							<div class="variants-grid">
 								<div class="variant-item">
-									<Logo size="lg" variant="blue" />
+									<Logo size="lg" variant="default" />
 									<span class="variant-label">Blue</span>
 									<code>variant="blue"</code>
 								</div>
 								<div class="variant-item">
-									<Logo size="lg" variant="dark" />
+									<Logo size="lg" variant="light" />
 									<span class="variant-label">Dark</span>
 									<code>variant="dark"</code>
 								</div>
 								<div class="variant-item">
-									<Logo size="lg" variant="orange" />
+									<Logo size="lg" variant="dark" />
 									<span class="variant-label">Orange</span>
 									<code>variant="orange"</code>
 								</div>
@@ -113,17 +113,17 @@ import Logo from '../components/Logo.astro';
 							<h3>Animations et effets</h3>
 							<div class="animations-grid">
 								<div class="animation-item">
-									<Logo size="lg" class="animate-pulse" />
+									<Logo size="lg" animate={true} />
 									<span class="animation-label">Pulse</span>
 									<code>class="animate-pulse"</code>
 								</div>
 								<div class="animation-item">
-									<Logo size="lg" class="custom-hover-effect" />
+									<Logo size="lg" animate={true} />
 									<span class="animation-label">Hover Effect</span>
 									<code>class="custom-hover-effect"</code>
 								</div>
 								<div class="animation-item">
-									<Logo size="lg" class="custom-shadow-effect" />
+									<Logo size="lg" animate={true} />
 									<span class="animation-label">Shadow</span>
 									<code>class="custom-shadow-effect"</code>
 								</div>
