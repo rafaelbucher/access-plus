@@ -14,11 +14,6 @@ import Logo from '../components/Logo.astro';
 	</head>
 
 	<body>
-		<header class="td-header td-header-full">
-			<h1>
-				<Logo size="md" variant="dark" />
-			</h1>
-		</header>
 
 		<div class="content-wrapper">
 		
@@ -31,6 +26,13 @@ import Logo from '../components/Logo.astro';
 					<span class="hamburger"></span>
 				</div>
 				<div class="nav-content">
+					<header class="td-header">
+						<h1>
+							<Logo size="md" variant="dark" />
+						</h1>
+						<h2 class="td-header-title">Design System</h2>
+						<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
+					</header>
 					<ul class="nav-list">
 						<li><a href="#logo" class="nav-link">Logo</a></li>
 						<li><a href="#couleurs" class="nav-link">Couleurs</a></li>
@@ -49,10 +51,6 @@ import Logo from '../components/Logo.astro';
 			<div class="nav-overlay" id="nav-overlay"></div>
 
 			<main class="td-main">
-				<header class="td-header">
-					<h1>Design System</h1>
-					<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
-				</header>
 				<!-- Logo Section -->
 				<section class="td-section" id="logo">
 					<h2>Logo</h2>
@@ -983,8 +981,12 @@ import Logo from '../components/Logo.astro';
 			.td-header {
 				text-align: left;
 				margin-bottom: var(--spacing-2xl);
+				padding-left: var(--spacing-md);
 			}
 
+			.td-header-title {
+				margin-top: var(--spacing-2xl);
+			}
 
 			.subtitle {
 				color: var(--color-text-light);
