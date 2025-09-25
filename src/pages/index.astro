@@ -20,10 +20,9 @@ import Logo from '../components/Logo.astro';
 
 			<main class="main">
 				<section class="hero">
-					<h2>Une expérience unique</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p>Guide des composants et styles utilisés dans le projet</p>
 					<div class="cta-buttons">
-						<a href="/design-system" class="td-link">Design system</a>
+						<a href="/design-system" class="td-btn td-btn-primary">Design system</a>
 					</div>
 				</section>
 
@@ -84,10 +83,6 @@ import Logo from '../components/Logo.astro';
 				--spacing-lg: 1.5rem;
 				--spacing-xl: 2rem;
 				--spacing-2xl: 3rem;
-
-				--border-radius-sm: 0.25rem;
-				--border-radius-md: 0.5rem;
-				--border-radius-lg: 0.75rem;
 
 				--shadow-sm: 0 1px 2px 0 rgb(34 34 34 / 0.05);
 				--shadow-md: 0 4px 6px -1px rgb(34 34 34 / 0.1), 0 2px 4px -2px rgb(34 34 34 / 0.1);
@@ -154,7 +149,6 @@ import Logo from '../components/Logo.astro';
 				text-align: center;
 				padding: var(--spacing-2xl) 0;
 				background: var(--color-surface);
-				border-radius: var(--border-radius-lg);
 				box-shadow: var(--shadow-md);
 			}
 
@@ -203,7 +197,6 @@ import Logo from '../components/Logo.astro';
 			.feature-card {
 				background: var(--color-surface);
 				padding: var(--spacing-xl);
-				border-radius: var(--border-radius-lg);
 				box-shadow: var(--shadow-sm);
 				transition: all 0.2s ease;
 			}
@@ -227,47 +220,170 @@ import Logo from '../components/Logo.astro';
 			}
 
 			/* Buttons */
-			.btn {
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				padding: var(--spacing-sm) var(--spacing-xl);
-				border: 2px solid transparent;
-				border-radius: var(--border-radius-md);
-				font-size: var(--font-size-base);
-				font-weight: 500;
+			@media (pointer: fine) {
+				.td-btn {
+					transform-style: preserve-3d;
+				}
+
+				.td-btn::before {
+					content: "";
+					position: absolute;
+					z-index: -10;
+					top: -0.1rem;
+					right: -0.1rem;
+					bottom: -0.1rem;
+					left: -0.1rem;
+					transform: translateZ(-0.1rem);
+					border: 0.1rem solid var(--btn-bordercolor);
+					transition: 250ms ease;
+				}
+				
+				.td-btn:hover::before, .td-btn:focus::before {
+					transform: translateZ(-0.1rem) translate(1rem, 1rem);
+				}
+
+				.td-btn-secondary:hover::before {
+					--btn-color: #222222;
+					--btn-bgcolor: transparent;
+					color: var(--btn-color);
+					background-color: var(--btn-bgcolor);
+				}
+			}
+
+			.td-btn {    
+				--btn-padding: 1rem 1.5rem;
+				--btn-color: #fff;
+				--btn-bgcolor: #222222;
+				--btn-bordercolor: #222222;
+				--btn-offset-bordercolor: #222222;
+				--btn-offset-bgcolor: transparent;
+				position: relative;
+				z-index: 10;
+				display: inline-block;
+				padding: var(--btn-padding);
+				margin-bottom: 1em;
+				color: var(--btn-color);
+				border: 0.1rem solid var(--btn-bordercolor);
+				background-color: var(--btn-bgcolor);
+				text-align: center;
 				text-decoration: none;
+				font-size: var(--font-size-base);
+				line-height: 1;
 				cursor: pointer;
 				transition: all 0.2s ease;
-				gap: var(--spacing-xs);
 			}
 
-			.btn-primary {
-				background-color: var(--color-primary);
-				color: var(--color-background);
-				border-color: var(--color-primary);
+			.td-btn:disabled {
+				opacity: 0.4;
+				cursor: not-allowed;
 			}
 
-			.btn-primary:hover {
-				background-color: #000000;
-				border-color: #000000;
-				transform: translateY(-1px);
-				box-shadow: var(--shadow-md);
+			.td-btn:disabled::before {
+				display: none;
 			}
 
-			.btn-outline {
-				background-color: transparent;
+			.td-btn-max {
+				--btn-padding: 1.5rem 2.5rem;
+				padding: var(--btn-padding);
+				font-size: var(--font-size-lg);
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
+			.td-btn-primary {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #222222;
+				--btn-bordercolor: #222222;
+				color: var(--btn-color);
+				border: 0.1rem solid var(--btn-bordercolor);
+				background-color: var(--btn-bgcolor);
+			}
+
+			.td-btn-secondary {
+				--btn-color: #222222;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #222222;
+			}
+
+			.td-btn-tertiary {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #1669B6;
+				--btn-bordercolor: #1669B6;
+			}
+
+			.td-btn-tertiary.td-btn-outline  {
+				--btn-color: #1669B6;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #1669B6;
+			}
+
+			.td-btn-highlight {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #FF5C33;
+				--btn-bordercolor: #FF5C33;
+			}
+
+			.td-btn-highlight.td-btn-outline {
+				--btn-color: #FF5C33;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #FF5C33;
+			}
+
+			.td-btn-success {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #10b981;
+				--btn-bordercolor: #10b981;
+			}
+
+			.td-btn-success.td-btn-outline  {
+				--btn-color: #10b981;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #10b981;
+			}
+
+			.td-btn-warning {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #f59e0b;
+				--btn-bordercolor: #f59e0b;
+			}
+
+			.td-btn-warning.td-btn-outline {
+				--btn-color: #f59e0b;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #f59e0b;
+			}
+
+			.td-btn-danger {
+				--btn-color: #faf5dd;
+				--btn-bgcolor: #ef4444;
+				--btn-bordercolor: #ef4444;
+			}
+
+			.td-btn-danger.td-btn-outline {
+				--btn-color: #ef4444;
+				--btn-bgcolor: #ffffff;
+				--btn-bordercolor: #ef4444;
+			}
+
+			.td-btn-small  {
+				--btn-padding: 0.75rem 1rem;
+				font-size: var(--font-size-sm);
+				padding: var(--btn-padding);
+			}
+
+			.td-button-group {
+				display: flex;
+				gap: var(--spacing-md);
+				margin: var(--spacing-md) 0;
+				flex-wrap: wrap;
+			}
+
+			.td-button-group h3 {
+				width: 100%;
+				font-size: var(--font-size-lg);
 				color: var(--color-text);
-				border-color: var(--color-text);
+				margin-bottom: var(--spacing-sm);
 			}
-
-			.btn-outline:hover {
-				background-color: var(--color-text);
-				color: var(--color-background);
-				transform: translateY(-1px);
-				box-shadow: var(--shadow-md);
-			}
-
 			/* Footer */
 			.footer {
 				margin-top: auto;
