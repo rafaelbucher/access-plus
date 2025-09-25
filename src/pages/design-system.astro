@@ -19,35 +19,36 @@ import Logo from '../components/Logo.astro';
 				<Logo size="md" variant="dark" />
 			</h1>
 		</header>
-		<!-- Navigation latérale -->
-		<nav class="sidebar-nav" id="sidebar-nav">
-			<div class="nav-toggle" id="nav-toggle">
-				<span class="hamburger"></span>
-				<span class="hamburger"></span>
-				<span class="hamburger"></span>
-			</div>
-			<div class="nav-content">
-				<ul class="nav-list">
-					<li><a href="#logo" class="nav-link">Logo</a></li>
-					<li><a href="#couleurs" class="nav-link">Couleurs</a></li>
-					<li><a href="#typographie" class="nav-link">Typographie</a></li>
-					<li><a href="#boutons" class="nav-link">Boutons</a></li>
-					<li><a href="#formulaires" class="nav-link">Éléments de formulaire</a></li>
-					<li><a href="#cartes" class="nav-link">Cartes</a></li>
-					<li><a href="#espacement" class="nav-link">Espacement</a></li>
-					<li><a href="#grille" class="nav-link">Système de grille</a></li>
-					<li><a href="#ombres" class="nav-link">Ombres et effets</a></li>
-				</ul>
-			</div>
-		</nav>
-
-		<!-- Overlay pour mobile -->
-		<div class="nav-overlay" id="nav-overlay"></div>
 
 		<div class="content-wrapper">
 		
 
-			<main class="main">
+			<!-- Navigation latérale -->
+			<nav class="sidebar-nav" id="sidebar-nav">
+				<div class="nav-toggle" id="nav-toggle">
+					<span class="hamburger"></span>
+					<span class="hamburger"></span>
+					<span class="hamburger"></span>
+				</div>
+				<div class="nav-content">
+					<ul class="nav-list">
+						<li><a href="#logo" class="nav-link">Logo</a></li>
+						<li><a href="#couleurs" class="nav-link">Couleurs</a></li>
+						<li><a href="#typographie" class="nav-link">Typographie</a></li>
+						<li><a href="#boutons" class="nav-link">Boutons</a></li>
+						<li><a href="#formulaires" class="nav-link">Éléments de formulaire</a></li>
+						<li><a href="#cartes" class="nav-link">Cartes</a></li>
+						<li><a href="#espacement" class="nav-link">Espacement</a></li>
+						<li><a href="#grille" class="nav-link">Système de grille</a></li>
+						<li><a href="#ombres" class="nav-link">Ombres et effets</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<!-- Overlay pour mobile -->
+			<div class="nav-overlay" id="nav-overlay"></div>
+
+			<main class="td-main">
 				<header class="td-header">
 					<h1>Design System</h1>
 					<p class="subtitle">Guide des composants et styles utilisés dans le projet</p>
@@ -966,7 +967,7 @@ import Logo from '../components/Logo.astro';
 			}
 
 			/* Layout */
-			.main {
+			.td-main {
 				max-width: 1200px;
 				margin: 0 auto;
 				padding: var(--spacing-xl);
@@ -1882,7 +1883,7 @@ import Logo from '../components/Logo.astro';
 
 			/* Responsive */
 			@media (max-width: 768px) {
-				.main {
+				.td-main {
 					padding: var(--spacing-md);
 					padding-top: calc(var(--spacing-md) + 60px);
 				}
@@ -1957,7 +1958,7 @@ import Logo from '../components/Logo.astro';
 			}
 
 			@media (max-width: 480px) {
-				.main {
+				.td-main {
 					padding: var(--spacing-sm);
 					padding-top: calc(var(--spacing-sm) + 60px);
 				}
@@ -2109,7 +2110,7 @@ import Logo from '../components/Logo.astro';
 					margin-left: 0 !important;
 				}
 
-				.main {
+				.td-main {
 					padding-top: var(--spacing-md) !important;
 				}
 			}
